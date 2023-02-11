@@ -9,6 +9,11 @@ import Foundation
 import UIKit
 
 enum SCColor {
+  case white
+  case green
+  case orange
+  case yellow
+  case red
   case darkGray
   case lightGray
   case addrLightGray
@@ -16,6 +21,16 @@ enum SCColor {
   
   var color: UIColor {
     switch self {
+    case .white:
+      return UIColor(r: 255, g: 255, b: 255)
+    case .green:
+      return UIColor(r: 56, g: 178, b: 94)
+    case .orange:
+      return UIColor(r: 236, g: 114, b: 65)
+    case .yellow:
+      return UIColor(r: 236, g: 148, b: 40)
+    case .red:
+      return UIColor(r: 196, g: 29, b: 47)
     case .darkGray:
       return UIColor(r: 44, g: 44, b: 44)
     case .lightGray:
