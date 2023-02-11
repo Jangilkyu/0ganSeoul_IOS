@@ -10,65 +10,14 @@ import SkeletonView
 
 class MainController: UIViewController {
   fileprivate let mainCellId = "mainCellId"
+  var seoulCities: SeoulCities!
   var cityList: [City] = []
-  private let seoulCityInfoDict: [String] = [
-    "강남 MICE 관광특구",
-    "동대문 관광특구",
-    "명동 관광특구",
-    "이태원 관광특구",
-    "잠실 관광특구",
-    "종로·청계 관광특구",
-    "홍대 관광특구",
-    "경복궁·서촌마을",
-    "광화문·덕수궁",
-    "창덕궁·종묘",
-    "가산디지털단지역",
-    "강남역",
-    "건대입구역",
-    "고속터미널역",
-    "교대역",
-    "구로디지털단지역",
-    "서울역",
-    "선릉역",
-    "신도림역",
-    "신림역",
-    "신촌·이대역",
-    "역삼역",
-    "연신내역",
-    "용산역",
-    "왕십리역",
-    "DMC(디지털미디어시티)",
-    "창동 신경제 중심지",
-    "노량진",
-    "낙산공원·이화마을",
-    "북촌한옥마을",
-    "가로수길",
-    "성수카페거리",
-    "수유리 먹자골목",
-    "쌍문동 맛집거리",
-    "압구정로데오거리",
-    "여의도",
-    "영등포 타임스퀘어",
-    "인사동·익선동",
-    "국립중앙박물관·용산가족공원",
-    "남산공원",
-    "뚝섬한강공원",
-    "망원한강공원",
-    "반포한강공원",
-    "북서울꿈의숲",
-    "서울대공원",
-    "서울숲공원",
-    "월드컵공원",
-    "이촌한강공원",
-    "잠실종합운동장",
-    "잠실한강공원"
-  ]
+  var api: RestProcessor!
+  var resHandler: ResHandler!
   
-  let mainTitleLabel: UILabel = {
-    let lb = UILabel()
-    lb.text = "서울시 도시 현황"
-    lb.font = SCFont.bold(size: 20)
-    return lb
+  let logoImageView : UIImageView = {
+    let iv = UIImageView(image: UIImage(named: "logo"))
+    return iv
   }()
   
   let collectionView: UICollectionView = {
@@ -83,38 +32,11 @@ class MainController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .white
+    // API fetch begins
+    api = RestProcessor()
+    api.reqeustDelegate = self
+    getCitiesAPIInfo()
     setup()
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    fetchSeoulCityCongestion(cityDict: seoulCityInfoDict)
-  }
-  
-  func fetchSeoulCityCongestion(cityDict: [String]) {
-    
-    for city in cityDict {
-      let seoulCityCnt = self.seoulCityInfoDict.count
-      var currentCityNum = 0
-      
-      RestProcessor.shared.requestSeoulCityInfo(cityID: city) { result in
-        switch result {
-        case .success(let cityInfoRes):
-          self.cityList.append(cityInfoRes)
-          currentCityNum = self.cityList.count
-          print(currentCityNum)
-          if currentCityNum % seoulCityCnt == 0 {
-            print("seoulCityCnt % currentCityNum", seoulCityCnt % currentCityNum)
-            DispatchQueue.main.async {
-              self.collectionView.reloadData()
-              self.collectionView.stopSkeletonAnimation()
-              self.collectionView.hideSkeleton(reloadDataAfter: true)
-            }
-          }
-        case .failure(_):
-          print("실패")
-        }
-      }
-    }
   }
   
   private func setup() {
@@ -124,13 +46,21 @@ class MainController: UIViewController {
     configureSkeletonView()
   }
   
+  private func getCitiesAPIInfo() {
+    api.makeRequest(
+      toURL: EndPoint.seoulCitiesData.url,
+      withHttpMethod: .get,
+      usage: .seoulCitiesData
+    )
+  }
+  
   private func addViews() {
-    view.addSubview(mainTitleLabel)
+    view.addSubview(logoImageView)
     view.addSubview(collectionView)
   }
   
   private func setConstraints() {
-    mainTitleLabelConstraints()
+    logoImageViewConstraints()
     collectionViewConstraints()
   }
   
@@ -142,18 +72,21 @@ class MainController: UIViewController {
   
   private func configureSkeletonView() {
     collectionView.isSkeletonable = true
-    collectionView.showAnimatedSkeleton()
+    let skeletonAnimation = SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: .leftRight)
+    self.collectionView.showAnimatedGradientSkeleton(usingGradient: .init(colors: [.lightGray, .gray]), animation: skeletonAnimation, transition: .none)
   }
   
-  private func mainTitleLabelConstraints() {
-    mainTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-    mainTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-    mainTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+  private func logoImageViewConstraints() {
+    logoImageView.translatesAutoresizingMaskIntoConstraints = false
+    logoImageView.heightAnchor.constraint(equalToConstant: 81).isActive = true
+    logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 70).isActive = true
+    logoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
+    logoImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -112).isActive = true
   }
   
   private func collectionViewConstraints() {
     collectionView.translatesAutoresizingMaskIntoConstraints = false
-    collectionView.topAnchor.constraint(equalTo: mainTitleLabel.bottomAnchor).isActive = true
+    collectionView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 50).isActive = true
     collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
     collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
@@ -170,7 +103,7 @@ extension MainController: SkeletonCollectionViewDataSource {
     _ collectionView: UICollectionView,
     numberOfItemsInSection section: Int
   ) -> Int {
-    return self.cityList.count
+    return self.seoulCities == nil ? 0 : self.seoulCities.getNumberOfCities()
   }
   
   func collectionSkeletonView(
@@ -194,14 +127,22 @@ extension MainController: SkeletonCollectionViewDataSource {
     guard let cell = collectionView.dequeueReusableCell(
       withReuseIdentifier: mainCellId,
       for: indexPath) as? MainCell else { return UICollectionViewCell() }
-    let city = cityList[indexPath.item]
-    cell.city = city
+    guard let cities = self.seoulCities else { return UICollectionViewCell() }
+    let city = cities.getCity()
     
-    DispatchQueue.main.async {
-      cell.imageView.image = UIImage(named: city.areaNm!)
-    }
+    cell.city = city?[indexPath.item]
+    
+    let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: cell.frame.width, height: cell.frame.height))
+    let image = UIImage(named: city?[indexPath.item].areaNM ?? "")
+    imageView.image = image
+    
+    let gradientViewFrame = imageView.frame;
+    imageView.addGradient(frame: gradientViewFrame)
+    cell.backgroundView = UIView()
+    cell.backgroundView!.addSubview(imageView)
     return cell
   }
+  
   
   func collectionSkeletonView(
     _ skeletonView: UICollectionView,
@@ -217,6 +158,38 @@ extension MainController: UICollectionViewDelegateFlowLayout {
     layout collectionVIewLayout: UICollectionViewLayout,
     sizeForItemAt indexPath: IndexPath
   ) -> CGSize {
-    return CGSize(width: view.frame.width - 20, height: 160)
+    return CGSize(width: view.frame.width - 80, height: 165)
+  }
+}
+
+extension MainController: RestProcessorRequestDelegate {
+  
+  func didReceiveResponseFromDataTask(
+    _ result: RestProcessor.Results,
+    _ usage: EndPoint
+  ) {
+    resHandler = ResHandler(result: result)
+    switch resHandler.getResult() {
+    case .ok(_, let data):
+      if let data = data,
+         let citiesData = try? JSONDecoder().decode([Cities].self, from: data) {
+        
+        self.seoulCities = SeoulCities(citiesData)
+        
+        DispatchQueue.main.async {
+          self.collectionView.reloadData()
+          self.collectionView.hideSkeleton()
+        }
+      }
+    default:
+      break
+    }
+  }
+  
+  func didFailToPrepareRequest(
+    _ result: RestProcessor.Results,
+    _ usage: EndPoint
+  ) {
+    
   }
 }

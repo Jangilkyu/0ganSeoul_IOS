@@ -12,92 +12,73 @@ class MainCell: UICollectionViewCell {
   
   var city: City? {
     didSet {
-      guard let city = self.city else { return }
-      self.areaNmLabel.text = city.areaNm
-      guard let areaCongestLvl = city.areaCongestLvl else { return }
+      guard let city = self.city else { return print("city가 없습니다.")}
+      self.areaNmLabel.text = city.areaNM
+      
+      guard let areaCongestLvl = city.LIVE_PPLTN_STTS?.areaCongestLvl else { return }
+      areaCongestLvlView.areaCongestLvlLabel.text = "인구 \(areaCongestLvl)"
       
       switch areaCongestLvl {
-        case "여유":
-          self.areaCongestLvlLabel.textColor = .gray
-        case "보통":
-          self.areaCongestLvlLabel.textColor = .green
-        case "약간 붐빔":
-          self.areaCongestLvlLabel.textColor = .orange
-        case "매우 붐빔":
-          self.areaCongestLvlLabel.textColor = .red
-        default:
-          break
+      case "여유":
+        self.areaCongestLvlView.backgroundColor = SCColor.green.color
+        let image = UIImage(named: "p01")
+        self.areaCongestLvlView.popIconImageView.image = image
+      case "보통":
+        self.areaCongestLvlView.backgroundColor = SCColor.yellow.color
+        let image = UIImage(named: "p02")
+        self.areaCongestLvlView.popIconImageView.image = image
+      case "약간 붐빔":
+        self.areaCongestLvlView.backgroundColor = SCColor.orange.color
+        let image = UIImage(named: "p03")
+        self.areaCongestLvlView.popIconImageView.image = image
+      case "붐빔":
+        self.areaCongestLvlView.backgroundColor = SCColor.red.color
+        let image = UIImage(named: "p04")
+        self.areaCongestLvlView.popIconImageView.image = image
+      default:
+        break
       }
-
-      self.areaCongestLvlLabel.text = areaCongestLvl
-      self.areaCongestMsgLabel.text = city.areaCongestMsg
-      self.roadTrafficIdxLabel.text = city.roadTrafficIdx
-      self.roadMSGLabel.text = city.roadMSG
+      
+      guard let roadTrafficIDX = city.AVG_ROAD_DATA?.roadTrafficIDX else { return }
+      roadTrafficView.roadTrafficLabel.text = "차량 \(roadTrafficIDX)"
+      
+      switch roadTrafficIDX {
+      case "원활":
+        self.roadTrafficView.backgroundColor = SCColor.green.color
+        let image = UIImage(named: "car01")
+        self.roadTrafficView.carIconImageView.image = image
+      case "서행":
+        self.roadTrafficView.backgroundColor = SCColor.yellow.color
+        let image = UIImage(named: "car02")
+        self.roadTrafficView.carIconImageView.image = image
+      case "정체":
+        self.roadTrafficView.backgroundColor = SCColor.red.color
+        let image = UIImage(named: "car04")
+        self.roadTrafficView.carIconImageView.image = image
+      default:
+        break
+      }
     }
   }
   
-  let imageView: UIImageView = {
-    let iv = UIImageView()
-    iv.contentMode = .scaleAspectFill
-    iv.clipsToBounds = true
-    iv.layer.cornerRadius = 5
-    return iv
-  }()
-  
   let areaNmLabel: UILabel = {
     let lb = UILabel()
-    lb.font = SCFont.semiBold(size: 18)
+    lb.font = SCFont.semiBold(size: 30)
+    lb.textColor = SCColor.white.color
+    lb.numberOfLines = 0
     return lb
   }()
   
-  let areaCongestMsgLabel: UILabel = {
-    let lb = UILabel()
-    lb.font = SCFont.thin(size: 11)
-    lb.numberOfLines = 3
-    return lb
-  }()
+  let areaCongestLvlView = AreaCongestLvlView()
   
-  let populationCongestionLabel: UILabel = {
-    let lb = UILabel()
-    lb.text = "인구 혼잡도"
-    lb.font = SCFont.semiBold(size: 13)
-    return lb
-  }()
-  
-  let areaCongestLvlLabel: UILabel = {
-    let lb = UILabel()
-    lb.font = SCFont.semiBold(size: 13)
-    return lb
-  }()
-  
-  let trafficCongestionLabel: UILabel = {
-    let lb = UILabel()
-    lb.text = "차량 혼잡도"
-    lb.font = SCFont.semiBold(size: 13)
-    return lb
-  }()
-  
-  let roadTrafficIdxLabel: UILabel = {
-    let lb = UILabel()
-    lb.font = SCFont.semiBold(size: 13)
-    return lb
-  }()
-  
-  let roadMSGLabel: UILabel = {
-    let lb = UILabel()
-    lb.font = SCFont.thin(size: 11)
-    lb.numberOfLines = 3
-    return lb
-  }()
-  
-  let mainHoriLine: UIView = {
-    let line = UIView()
-    line.backgroundColor = SCColor.lightGray.color
-    return line
-  }()
+  let roadTrafficView = RoadTrafficView()
   
   override init(frame: CGRect) {
     super.init(frame: frame)
+    commonAttribute(at: self)
+    commonAttribute(at: areaNmLabel)
+    commonAttribute(at: areaCongestLvlView)
+    commonAttribute(at: roadTrafficView)
     setup()
   }
   
@@ -106,102 +87,49 @@ class MainCell: UICollectionViewCell {
   }
   
   private func setup() {
-    setSkeletonView()
+    layer.masksToBounds = true
+    layer.cornerRadius = 12
     addViews()
     setConstraints()
   }
   
+  private func commonAttribute(at targetView: UIView) {
+    targetView.isSkeletonable = true
+  }
+  
   private func addViews() {
-    addSubview(imageView)
-    addSubview(areaNmLabel)
-    addSubview(populationCongestionLabel)
-    addSubview(areaCongestLvlLabel)
-    addSubview(areaCongestMsgLabel)
-    addSubview(trafficCongestionLabel)
-    addSubview(roadTrafficIdxLabel)
-    addSubview(roadMSGLabel)
-    addSubview(mainHoriLine)
+    contentView.addSubview(areaNmLabel)
+    contentView.addSubview(areaCongestLvlView)
+    contentView.addSubview(roadTrafficView)
   }
   
   private func setConstraints() {
-    imageViewConstraints()
     areaNmLabelConstraints()
-    populationCongestionLabelConstraints()
-    areaCongestLvlLabelConstraints()
-    areaCongestMsgLabelConstraints()
-    trafficCongestionLabelConstraints()
-    roadTrafficIdxLabelConstraints()
-    roadMSGLabelConstraints()
-    mainHoriLineConstraints()
-  }
-  
-  private func setSkeletonView() {
-    self.isSkeletonable = true
-    self.contentView.isSkeletonable = true
-    self.imageView.isSkeletonable = true
-    self.areaNmLabel.isSkeletonable = true
-    self.areaCongestLvlLabel.isSkeletonable = true
-    self.areaCongestMsgLabel.isSkeletonable = true
-  }
-  
-  private func imageViewConstraints() {
-    imageView.translatesAutoresizingMaskIntoConstraints = false
-    imageView.widthAnchor.constraint(equalTo: heightAnchor, multiplier: 0.9).isActive = true
-    imageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.8).isActive = true
-    imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
-    imageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+    areaCongestLvlViewConstraints()
+    roadTrafficViewConstraints()
   }
   
   private func areaNmLabelConstraints() {
     areaNmLabel.translatesAutoresizingMaskIntoConstraints = false
-    areaNmLabel.topAnchor.constraint(equalTo: imageView.topAnchor).isActive = true
-    areaNmLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10).isActive = true
+    areaNmLabel.topAnchor.constraint(equalTo: topAnchor, constant: 39).isActive = true
+    areaNmLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24).isActive = true
+    areaNmLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50).isActive = true
   }
   
-  private func populationCongestionLabelConstraints() {
-    populationCongestionLabel.translatesAutoresizingMaskIntoConstraints = false
-    populationCongestionLabel.topAnchor.constraint(equalTo: areaNmLabel.bottomAnchor, constant: 5).isActive = true
-    populationCongestionLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10).isActive = true
+  private func areaCongestLvlViewConstraints() {
+    areaCongestLvlView.translatesAutoresizingMaskIntoConstraints = false
+    areaCongestLvlView.topAnchor.constraint(equalTo: areaNmLabel.bottomAnchor, constant: 8).isActive = true
+    areaCongestLvlView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -22).isActive = true
+    areaCongestLvlView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 26).isActive = true
+    areaCongestLvlView.trailingAnchor.constraint(equalTo: roadTrafficView.leadingAnchor, constant: -12).isActive = true
   }
   
-  private func areaCongestLvlLabelConstraints() {
-    areaCongestLvlLabel.translatesAutoresizingMaskIntoConstraints = false
-    areaCongestLvlLabel.topAnchor.constraint(equalTo: areaNmLabel.bottomAnchor, constant: 5).isActive = true
-    areaCongestLvlLabel.leadingAnchor.constraint(equalTo: populationCongestionLabel.trailingAnchor, constant: 3).isActive = true
+  private func roadTrafficViewConstraints() {
+    roadTrafficView.translatesAutoresizingMaskIntoConstraints = false
+    roadTrafficView.topAnchor.constraint(equalTo: areaNmLabel.bottomAnchor, constant: 8).isActive = true
+    roadTrafficView.widthAnchor.constraint(equalTo: areaCongestLvlView.widthAnchor).isActive = true
+    roadTrafficView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -22).isActive = true
+    roadTrafficView.leadingAnchor.constraint(equalTo: areaCongestLvlView.trailingAnchor, constant: 12).isActive = true
+    roadTrafficView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -41).isActive = true
   }
-  
-  private func areaCongestMsgLabelConstraints() {
-    areaCongestMsgLabel.translatesAutoresizingMaskIntoConstraints = false
-    areaCongestMsgLabel.topAnchor.constraint(equalTo: areaCongestLvlLabel.bottomAnchor, constant: 3).isActive = true
-    areaCongestMsgLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10).isActive = true
-    areaCongestMsgLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
-  }
-  
-  private func trafficCongestionLabelConstraints() {
-    trafficCongestionLabel.translatesAutoresizingMaskIntoConstraints = false
-    trafficCongestionLabel.topAnchor.constraint(equalTo: areaCongestMsgLabel.bottomAnchor, constant: 3).isActive = true
-    trafficCongestionLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10).isActive = true
-  }
-  
-  private func roadTrafficIdxLabelConstraints() {
-    roadTrafficIdxLabel.translatesAutoresizingMaskIntoConstraints = false
-    roadTrafficIdxLabel.topAnchor.constraint(equalTo: areaCongestMsgLabel.bottomAnchor, constant: 3).isActive = true
-    roadTrafficIdxLabel.leadingAnchor.constraint(equalTo: trafficCongestionLabel.trailingAnchor, constant: 3).isActive = true
-  }
-  
-  private func roadMSGLabelConstraints() {
-    roadMSGLabel.translatesAutoresizingMaskIntoConstraints = false
-    roadMSGLabel.topAnchor.constraint(equalTo: roadTrafficIdxLabel.bottomAnchor).isActive = true
-    roadMSGLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10).isActive = true
-    roadMSGLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
-  }
-  
-  private func mainHoriLineConstraints() {
-    mainHoriLine.translatesAutoresizingMaskIntoConstraints = false
-    mainHoriLine.heightAnchor.constraint(equalToConstant: 1).isActive = true
-    mainHoriLine.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-    mainHoriLine.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
-    mainHoriLine.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
-  }
-  
 }
