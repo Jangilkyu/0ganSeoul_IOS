@@ -18,6 +18,10 @@ class SeoulCities {
     return cities[0].cities
   }
   
+  func setCity(city: [City]?) {
+    self.cities[0].cities = city
+  }
+  
   func getNumberOfCities() -> Int {
     if cities.count > 0 {
       let numberOfCities = cities[0].cities!.count
