@@ -7,18 +7,116 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE06CB5129BDD687003297E9 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB4129BDD686003297E9 /* loading.json */; };
+		FE06CB5229BDD687003297E9 /* search-loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB4229BDD686003297E9 /* search-loading.swift */; };
+		FE06CB5329BDD687003297E9 /* SeoulCongesionInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB4329BDD686003297E9 /* SeoulCongesionInfo.plist */; };
+		FE06CB5429BDD687003297E9 /* SCColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB4529BDD686003297E9 /* SCColor.swift */; };
+		FE06CB5529BDD687003297E9 /* Extension+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB4729BDD686003297E9 /* Extension+UITextField.swift */; };
+		FE06CB5629BDD687003297E9 /* Extension+UIview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB4829BDD686003297E9 /* Extension+UIview.swift */; };
+		FE06CB5729BDD687003297E9 /* SeoulCongestion++Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB4929BDD686003297E9 /* SeoulCongestion++Bundle.swift */; };
+		FE06CB5829BDD687003297E9 /* SCFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB4A29BDD686003297E9 /* SCFont.swift */; };
+		FE06CB5929BDD687003297E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB4B29BDD687003297E9 /* SceneDelegate.swift */; };
+		FE06CB5A29BDD687003297E9 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB4D29BDD687003297E9 /* City.swift */; };
+		FE06CB5B29BDD687003297E9 /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB4E29BDD687003297E9 /* Cities.swift */; };
+		FE06CB5C29BDD687003297E9 /* SearchCities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB4F29BDD687003297E9 /* SearchCities.swift */; };
+		FE06CB5D29BDD687003297E9 /* SeoulCities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB5029BDD687003297E9 /* SeoulCities.swift */; };
+		FE06CB7229BDD68C003297E9 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB5F29BDD68C003297E9 /* Pretendard-Regular.otf */; };
+		FE06CB7329BDD68C003297E9 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB6029BDD68C003297E9 /* Pretendard-Black.otf */; };
+		FE06CB7429BDD68C003297E9 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB6129BDD68C003297E9 /* Pretendard-Medium.otf */; };
+		FE06CB7529BDD68C003297E9 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB6229BDD68C003297E9 /* Pretendard-Light.otf */; };
+		FE06CB7629BDD68C003297E9 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB6329BDD68C003297E9 /* Pretendard-ExtraBold.otf */; };
+		FE06CB7729BDD68C003297E9 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB6429BDD68C003297E9 /* Pretendard-Bold.otf */; };
+		FE06CB7829BDD68C003297E9 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB6529BDD68C003297E9 /* Pretendard-Thin.otf */; };
+		FE06CB7929BDD68C003297E9 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB6629BDD68C003297E9 /* Pretendard-ExtraLight.otf */; };
+		FE06CB7A29BDD68C003297E9 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB6729BDD68C003297E9 /* Pretendard-SemiBold.otf */; };
+		FE06CB7B29BDD68C003297E9 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB6929BDD68C003297E9 /* MainController.swift */; };
+		FE06CB7C29BDD68C003297E9 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB6B29BDD68C003297E9 /* MainCell.swift */; };
+		FE06CB7D29BDD68C003297E9 /* RoadTrafficView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB6D29BDD68C003297E9 /* RoadTrafficView.swift */; };
+		FE06CB7E29BDD68C003297E9 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB6E29BDD68C003297E9 /* EmptyView.swift */; };
+		FE06CB7F29BDD68C003297E9 /* AreaCongestLvlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB6F29BDD68C003297E9 /* AreaCongestLvlView.swift */; };
+		FE06CB8029BDD68C003297E9 /* CityCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB7029BDD68C003297E9 /* CityCountView.swift */; };
+		FE06CB8129BDD68C003297E9 /* CitySearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB7129BDD68C003297E9 /* CitySearchTextField.swift */; };
+		FE06CB8729BDD698003297E9 /* RestProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB8329BDD698003297E9 /* RestProcessor.swift */; };
+		FE06CB8829BDD698003297E9 /* RestProcessor+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB8429BDD698003297E9 /* RestProcessor+Model.swift */; };
+		FE06CB8929BDD698003297E9 /* ResHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB8529BDD698003297E9 /* ResHandler.swift */; };
+		FE06CB8A29BDD698003297E9 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB8629BDD698003297E9 /* EndPoint.swift */; };
+		FE06CB9529BDD6CC003297E9 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB8C29BDD6CC003297E9 /* Pretendard-Regular.otf */; };
+		FE06CB9629BDD6CC003297E9 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB8D29BDD6CC003297E9 /* Pretendard-Black.otf */; };
+		FE06CB9729BDD6CC003297E9 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB8E29BDD6CC003297E9 /* Pretendard-Medium.otf */; };
+		FE06CB9829BDD6CC003297E9 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB8F29BDD6CC003297E9 /* Pretendard-Light.otf */; };
+		FE06CB9929BDD6CC003297E9 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB9029BDD6CC003297E9 /* Pretendard-ExtraBold.otf */; };
+		FE06CB9A29BDD6CC003297E9 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB9129BDD6CC003297E9 /* Pretendard-Bold.otf */; };
+		FE06CB9B29BDD6CC003297E9 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB9229BDD6CC003297E9 /* Pretendard-Thin.otf */; };
+		FE06CB9C29BDD6CC003297E9 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB9329BDD6CC003297E9 /* Pretendard-ExtraLight.otf */; };
+		FE06CB9D29BDD6CC003297E9 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB9429BDD6CC003297E9 /* Pretendard-SemiBold.otf */; };
+		FE06CBA829BDD6D1003297E9 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB9F29BDD6D1003297E9 /* MainController.swift */; };
+		FE06CBA929BDD6D1003297E9 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBA129BDD6D1003297E9 /* MainCell.swift */; };
+		FE06CBAA29BDD6D1003297E9 /* RoadTrafficView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBA329BDD6D1003297E9 /* RoadTrafficView.swift */; };
+		FE06CBAB29BDD6D1003297E9 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBA429BDD6D1003297E9 /* EmptyView.swift */; };
+		FE06CBAC29BDD6D1003297E9 /* AreaCongestLvlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBA529BDD6D1003297E9 /* AreaCongestLvlView.swift */; };
+		FE06CBAD29BDD6D1003297E9 /* CityCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBA629BDD6D1003297E9 /* CityCountView.swift */; };
+		FE06CBAE29BDD6D1003297E9 /* CitySearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBA729BDD6D1003297E9 /* CitySearchTextField.swift */; };
+		FE06CBB129BDD73B003297E9 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = FE06CBB029BDD73B003297E9 /* SkeletonView */; };
+		FE06CBB429BDD78E003297E9 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FE06CBB329BDD78E003297E9 /* Lottie */; };
 		FE74021E29814B510014629A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74021D29814B510014629A /* AppDelegate.swift */; };
 		FE74022029814B510014629A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74021F29814B510014629A /* SceneDelegate.swift */; };
-		FE74022229814B510014629A /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74022129814B510014629A /* MainController.swift */; };
 		FE74022729814B520014629A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE74022629814B520014629A /* Assets.xcassets */; };
 		FE74022A29814B520014629A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE74022829814B520014629A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE06CB4129BDD686003297E9 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		FE06CB4229BDD686003297E9 /* search-loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "search-loading.swift"; sourceTree = "<group>"; };
+		FE06CB4329BDD686003297E9 /* SeoulCongesionInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SeoulCongesionInfo.plist; sourceTree = "<group>"; };
+		FE06CB4529BDD686003297E9 /* SCColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCColor.swift; sourceTree = "<group>"; };
+		FE06CB4729BDD686003297E9 /* Extension+UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UITextField.swift"; sourceTree = "<group>"; };
+		FE06CB4829BDD686003297E9 /* Extension+UIview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIview.swift"; sourceTree = "<group>"; };
+		FE06CB4929BDD686003297E9 /* SeoulCongestion++Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SeoulCongestion++Bundle.swift"; sourceTree = "<group>"; };
+		FE06CB4A29BDD686003297E9 /* SCFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCFont.swift; sourceTree = "<group>"; };
+		FE06CB4B29BDD687003297E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FE06CB4D29BDD687003297E9 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		FE06CB4E29BDD687003297E9 /* Cities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
+		FE06CB4F29BDD687003297E9 /* SearchCities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCities.swift; sourceTree = "<group>"; };
+		FE06CB5029BDD687003297E9 /* SeoulCities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeoulCities.swift; sourceTree = "<group>"; };
+		FE06CB5F29BDD68C003297E9 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		FE06CB6029BDD68C003297E9 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
+		FE06CB6129BDD68C003297E9 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		FE06CB6229BDD68C003297E9 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		FE06CB6329BDD68C003297E9 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		FE06CB6429BDD68C003297E9 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		FE06CB6529BDD68C003297E9 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		FE06CB6629BDD68C003297E9 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		FE06CB6729BDD68C003297E9 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		FE06CB6929BDD68C003297E9 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		FE06CB6B29BDD68C003297E9 /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		FE06CB6D29BDD68C003297E9 /* RoadTrafficView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoadTrafficView.swift; sourceTree = "<group>"; };
+		FE06CB6E29BDD68C003297E9 /* EmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		FE06CB6F29BDD68C003297E9 /* AreaCongestLvlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaCongestLvlView.swift; sourceTree = "<group>"; };
+		FE06CB7029BDD68C003297E9 /* CityCountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityCountView.swift; sourceTree = "<group>"; };
+		FE06CB7129BDD68C003297E9 /* CitySearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitySearchTextField.swift; sourceTree = "<group>"; };
+		FE06CB8329BDD698003297E9 /* RestProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestProcessor.swift; sourceTree = "<group>"; };
+		FE06CB8429BDD698003297E9 /* RestProcessor+Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RestProcessor+Model.swift"; sourceTree = "<group>"; };
+		FE06CB8529BDD698003297E9 /* ResHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResHandler.swift; sourceTree = "<group>"; };
+		FE06CB8629BDD698003297E9 /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		FE06CB8C29BDD6CC003297E9 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		FE06CB8D29BDD6CC003297E9 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
+		FE06CB8E29BDD6CC003297E9 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		FE06CB8F29BDD6CC003297E9 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		FE06CB9029BDD6CC003297E9 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		FE06CB9129BDD6CC003297E9 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		FE06CB9229BDD6CC003297E9 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		FE06CB9329BDD6CC003297E9 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		FE06CB9429BDD6CC003297E9 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		FE06CB9F29BDD6D1003297E9 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		FE06CBA129BDD6D1003297E9 /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		FE06CBA329BDD6D1003297E9 /* RoadTrafficView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoadTrafficView.swift; sourceTree = "<group>"; };
+		FE06CBA429BDD6D1003297E9 /* EmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		FE06CBA529BDD6D1003297E9 /* AreaCongestLvlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaCongestLvlView.swift; sourceTree = "<group>"; };
+		FE06CBA629BDD6D1003297E9 /* CityCountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityCountView.swift; sourceTree = "<group>"; };
+		FE06CBA729BDD6D1003297E9 /* CitySearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitySearchTextField.swift; sourceTree = "<group>"; };
 		FE74021A29814B510014629A /* SeoulCongestion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeoulCongestion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE74021D29814B510014629A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE74021F29814B510014629A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FE74022129814B510014629A /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		FE74022629814B520014629A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE74022929814B520014629A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE74022B29814B520014629A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -29,12 +127,161 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE06CBB129BDD73B003297E9 /* SkeletonView in Frameworks */,
+				FE06CBB429BDD78E003297E9 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE06CB4029BDD686003297E9 /* lottie */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CB4129BDD686003297E9 /* loading.json */,
+				FE06CB4229BDD686003297E9 /* search-loading.swift */,
+			);
+			path = lottie;
+			sourceTree = "<group>";
+		};
+		FE06CB4429BDD686003297E9 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CB6829BDD68C003297E9 /* Controllers */,
+				FE06CB5E29BDD68C003297E9 /* Fonts */,
+				FE06CB4529BDD686003297E9 /* SCColor.swift */,
+				FE06CB4629BDD686003297E9 /* Extension */,
+				FE06CB4929BDD686003297E9 /* SeoulCongestion++Bundle.swift */,
+				FE06CB4A29BDD686003297E9 /* SCFont.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		FE06CB4629BDD686003297E9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CB4729BDD686003297E9 /* Extension+UITextField.swift */,
+				FE06CB4829BDD686003297E9 /* Extension+UIview.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FE06CB4C29BDD687003297E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CB4D29BDD687003297E9 /* City.swift */,
+				FE06CB4E29BDD687003297E9 /* Cities.swift */,
+				FE06CB4F29BDD687003297E9 /* SearchCities.swift */,
+				FE06CB5029BDD687003297E9 /* SeoulCities.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FE06CB5E29BDD68C003297E9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CB5F29BDD68C003297E9 /* Pretendard-Regular.otf */,
+				FE06CB6029BDD68C003297E9 /* Pretendard-Black.otf */,
+				FE06CB6129BDD68C003297E9 /* Pretendard-Medium.otf */,
+				FE06CB6229BDD68C003297E9 /* Pretendard-Light.otf */,
+				FE06CB6329BDD68C003297E9 /* Pretendard-ExtraBold.otf */,
+				FE06CB6429BDD68C003297E9 /* Pretendard-Bold.otf */,
+				FE06CB6529BDD68C003297E9 /* Pretendard-Thin.otf */,
+				FE06CB6629BDD68C003297E9 /* Pretendard-ExtraLight.otf */,
+				FE06CB6729BDD68C003297E9 /* Pretendard-SemiBold.otf */,
+			);
+			name = Fonts;
+			path = SeoulCongestion/Fonts;
+			sourceTree = SOURCE_ROOT;
+		};
+		FE06CB6829BDD68C003297E9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CB6929BDD68C003297E9 /* MainController.swift */,
+				FE06CB6A29BDD68C003297E9 /* Cell */,
+				FE06CB6C29BDD68C003297E9 /* View */,
+			);
+			name = Controllers;
+			path = SeoulCongestion/Controllers;
+			sourceTree = SOURCE_ROOT;
+		};
+		FE06CB6A29BDD68C003297E9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CB6B29BDD68C003297E9 /* MainCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FE06CB6C29BDD68C003297E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CB6D29BDD68C003297E9 /* RoadTrafficView.swift */,
+				FE06CB6E29BDD68C003297E9 /* EmptyView.swift */,
+				FE06CB6F29BDD68C003297E9 /* AreaCongestLvlView.swift */,
+				FE06CB7029BDD68C003297E9 /* CityCountView.swift */,
+				FE06CB7129BDD68C003297E9 /* CitySearchTextField.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FE06CB8229BDD698003297E9 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CB8329BDD698003297E9 /* RestProcessor.swift */,
+				FE06CB8429BDD698003297E9 /* RestProcessor+Model.swift */,
+				FE06CB8529BDD698003297E9 /* ResHandler.swift */,
+				FE06CB8629BDD698003297E9 /* EndPoint.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		FE06CB8B29BDD6CC003297E9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CB8C29BDD6CC003297E9 /* Pretendard-Regular.otf */,
+				FE06CB8D29BDD6CC003297E9 /* Pretendard-Black.otf */,
+				FE06CB8E29BDD6CC003297E9 /* Pretendard-Medium.otf */,
+				FE06CB8F29BDD6CC003297E9 /* Pretendard-Light.otf */,
+				FE06CB9029BDD6CC003297E9 /* Pretendard-ExtraBold.otf */,
+				FE06CB9129BDD6CC003297E9 /* Pretendard-Bold.otf */,
+				FE06CB9229BDD6CC003297E9 /* Pretendard-Thin.otf */,
+				FE06CB9329BDD6CC003297E9 /* Pretendard-ExtraLight.otf */,
+				FE06CB9429BDD6CC003297E9 /* Pretendard-SemiBold.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FE06CB9E29BDD6D1003297E9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CB9F29BDD6D1003297E9 /* MainController.swift */,
+				FE06CBA029BDD6D1003297E9 /* Cell */,
+				FE06CBA229BDD6D1003297E9 /* View */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FE06CBA029BDD6D1003297E9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CBA129BDD6D1003297E9 /* MainCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FE06CBA229BDD6D1003297E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CBA329BDD6D1003297E9 /* RoadTrafficView.swift */,
+				FE06CBA429BDD6D1003297E9 /* EmptyView.swift */,
+				FE06CBA529BDD6D1003297E9 /* AreaCongestLvlView.swift */,
+				FE06CBA629BDD6D1003297E9 /* CityCountView.swift */,
+				FE06CBA729BDD6D1003297E9 /* CitySearchTextField.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		FE74021129814B510014629A = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +301,19 @@
 		FE74021C29814B510014629A /* SeoulCongestion */ = {
 			isa = PBXGroup;
 			children = (
+				FE06CB9E29BDD6D1003297E9 /* Controllers */,
+				FE06CB8B29BDD6CC003297E9 /* Fonts */,
+				FE06CB4029BDD686003297E9 /* lottie */,
+				FE06CB4429BDD686003297E9 /* Util */,
+				FE06CB4C29BDD687003297E9 /* Model */,
+				FE06CB8229BDD698003297E9 /* API */,
 				FE74021D29814B510014629A /* AppDelegate.swift */,
 				FE74021F29814B510014629A /* SceneDelegate.swift */,
-				FE74022129814B510014629A /* MainController.swift */,
 				FE74022629814B520014629A /* Assets.xcassets */,
 				FE74022829814B520014629A /* LaunchScreen.storyboard */,
 				FE74022B29814B520014629A /* Info.plist */,
+				FE06CB4B29BDD687003297E9 /* SceneDelegate.swift */,
+				FE06CB4329BDD686003297E9 /* SeoulCongesionInfo.plist */,
 			);
 			path = SeoulCongestion;
 			sourceTree = "<group>";
@@ -80,6 +334,10 @@
 			dependencies = (
 			);
 			name = SeoulCongestion;
+			packageProductDependencies = (
+				FE06CBB029BDD73B003297E9 /* SkeletonView */,
+				FE06CBB329BDD78E003297E9 /* Lottie */,
+			);
 			productName = SeoulCongestion;
 			productReference = FE74021A29814B510014629A /* SeoulCongestion.app */;
 			productType = "com.apple.product-type.application";
@@ -108,6 +366,10 @@
 				Base,
 			);
 			mainGroup = FE74021129814B510014629A;
+			packageReferences = (
+				FE06CBAF29BDD73B003297E9 /* XCRemoteSwiftPackageReference "SkeletonView" */,
+				FE06CBB229BDD78E003297E9 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = FE74021B29814B510014629A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -122,8 +384,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE06CB9C29BDD6CC003297E9 /* Pretendard-ExtraLight.otf in Resources */,
+				FE06CB9A29BDD6CC003297E9 /* Pretendard-Bold.otf in Resources */,
+				FE06CB7429BDD68C003297E9 /* Pretendard-Medium.otf in Resources */,
+				FE06CB7729BDD68C003297E9 /* Pretendard-Bold.otf in Resources */,
+				FE06CB9929BDD6CC003297E9 /* Pretendard-ExtraBold.otf in Resources */,
+				FE06CB9829BDD6CC003297E9 /* Pretendard-Light.otf in Resources */,
+				FE06CB7529BDD68C003297E9 /* Pretendard-Light.otf in Resources */,
+				FE06CB9729BDD6CC003297E9 /* Pretendard-Medium.otf in Resources */,
+				FE06CB7A29BDD68C003297E9 /* Pretendard-SemiBold.otf in Resources */,
+				FE06CB9629BDD6CC003297E9 /* Pretendard-Black.otf in Resources */,
+				FE06CB7629BDD68C003297E9 /* Pretendard-ExtraBold.otf in Resources */,
+				FE06CB9D29BDD6CC003297E9 /* Pretendard-SemiBold.otf in Resources */,
 				FE74022A29814B520014629A /* LaunchScreen.storyboard in Resources */,
+				FE06CB9B29BDD6CC003297E9 /* Pretendard-Thin.otf in Resources */,
 				FE74022729814B520014629A /* Assets.xcassets in Resources */,
+				FE06CB7929BDD68C003297E9 /* Pretendard-ExtraLight.otf in Resources */,
+				FE06CB7229BDD68C003297E9 /* Pretendard-Regular.otf in Resources */,
+				FE06CB5129BDD687003297E9 /* loading.json in Resources */,
+				FE06CB7329BDD68C003297E9 /* Pretendard-Black.otf in Resources */,
+				FE06CB9529BDD6CC003297E9 /* Pretendard-Regular.otf in Resources */,
+				FE06CB7829BDD68C003297E9 /* Pretendard-Thin.otf in Resources */,
+				FE06CB5329BDD687003297E9 /* SeoulCongesionInfo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,9 +416,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE74022229814B510014629A /* MainController.swift in Sources */,
+				FE06CB8029BDD68C003297E9 /* CityCountView.swift in Sources */,
+				FE06CB7D29BDD68C003297E9 /* RoadTrafficView.swift in Sources */,
 				FE74021E29814B510014629A /* AppDelegate.swift in Sources */,
+				FE06CB5429BDD687003297E9 /* SCColor.swift in Sources */,
+				FE06CB5929BDD687003297E9 /* SceneDelegate.swift in Sources */,
+				FE06CBAD29BDD6D1003297E9 /* CityCountView.swift in Sources */,
+				FE06CBAA29BDD6D1003297E9 /* RoadTrafficView.swift in Sources */,
+				FE06CB5629BDD687003297E9 /* Extension+UIview.swift in Sources */,
 				FE74022029814B510014629A /* SceneDelegate.swift in Sources */,
+				FE06CB5829BDD687003297E9 /* SCFont.swift in Sources */,
+				FE06CB8929BDD698003297E9 /* ResHandler.swift in Sources */,
+				FE06CB7E29BDD68C003297E9 /* EmptyView.swift in Sources */,
+				FE06CB5B29BDD687003297E9 /* Cities.swift in Sources */,
+				FE06CBAB29BDD6D1003297E9 /* EmptyView.swift in Sources */,
+				FE06CB5D29BDD687003297E9 /* SeoulCities.swift in Sources */,
+				FE06CB7B29BDD68C003297E9 /* MainController.swift in Sources */,
+				FE06CB8129BDD68C003297E9 /* CitySearchTextField.swift in Sources */,
+				FE06CB5A29BDD687003297E9 /* City.swift in Sources */,
+				FE06CBAC29BDD6D1003297E9 /* AreaCongestLvlView.swift in Sources */,
+				FE06CB5C29BDD687003297E9 /* SearchCities.swift in Sources */,
+				FE06CB5529BDD687003297E9 /* Extension+UITextField.swift in Sources */,
+				FE06CBAE29BDD6D1003297E9 /* CitySearchTextField.swift in Sources */,
+				FE06CB7F29BDD68C003297E9 /* AreaCongestLvlView.swift in Sources */,
+				FE06CBA929BDD6D1003297E9 /* MainCell.swift in Sources */,
+				FE06CB8A29BDD698003297E9 /* EndPoint.swift in Sources */,
+				FE06CBA829BDD6D1003297E9 /* MainController.swift in Sources */,
+				FE06CB5229BDD687003297E9 /* search-loading.swift in Sources */,
+				FE06CB8729BDD698003297E9 /* RestProcessor.swift in Sources */,
+				FE06CB5729BDD687003297E9 /* SeoulCongestion++Bundle.swift in Sources */,
+				FE06CB8829BDD698003297E9 /* RestProcessor+Model.swift in Sources */,
+				FE06CB7C29BDD68C003297E9 /* MainCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +654,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FE06CBAF29BDD73B003297E9 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		FE06CBB229BDD78E003297E9 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FE06CBB029BDD73B003297E9 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE06CBAF29BDD73B003297E9 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
+		FE06CBB329BDD78E003297E9 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE06CBB229BDD78E003297E9 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FE74021229814B510014629A /* Project object */;
 }
