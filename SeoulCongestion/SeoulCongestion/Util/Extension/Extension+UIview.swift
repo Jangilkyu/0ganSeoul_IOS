@@ -25,4 +25,3 @@ extension UIView {
         addSubview(gradientView)
     }
 }
-  

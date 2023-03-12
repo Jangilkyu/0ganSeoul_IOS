@@ -12,11 +12,6 @@ class ResHandler {
   enum ResultTypes {
     case created(RestProcessor.RestEntity, Data?)
     case ok(RestProcessor.RestEntity, Data?)
-    case clientError
-    case serverError
-    case duplicateEmail
-    case accessTokenExpired
-    case unauthorized
   }
   
   private let result: RestProcessor.Results

@@ -40,6 +40,7 @@ class MainController: UIViewController {
     emptyView.isHidden = true
     self.citySearchTextField.textField.isEnabled = false
     view.backgroundColor = .white
+    
     // API fetch begins
     api = RestProcessor()
     api.reqeustDelegate = self
@@ -131,7 +132,7 @@ class MainController: UIViewController {
   private func logoImageViewConstraints() {
     logoImageView.translatesAutoresizingMaskIntoConstraints = false
     logoImageView.heightAnchor.constraint(equalToConstant: 81).isActive = true
-    logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 70).isActive = true
+    logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
     logoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
     logoImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -112).isActive = true
   }
@@ -191,6 +192,15 @@ extension MainController: SkeletonCollectionViewDataSource {
     }
   }
   
+  func collectionView(
+    _ collectionView: UICollectionView,
+    didSelectItemAt indexPath: IndexPath
+  ) {
+    let city = self.seoulCities.getOneCenter(at: indexPath)
+    let cityDetailController = CityDetailController(city)
+    navigationController?.pushViewController(cityDetailController, animated: true)
+  }
+  
   func collectionSkeletonView(
     _ skeletonView: UICollectionView,
     cellIdentifierForItemAt indexPath: IndexPath
@@ -227,7 +237,6 @@ extension MainController: SkeletonCollectionViewDataSource {
     cell.backgroundView!.addSubview(imageView)
     return cell
   }
-  
   
   func collectionSkeletonView(
     _ skeletonView: UICollectionView,

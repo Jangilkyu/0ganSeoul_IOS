@@ -63,7 +63,6 @@ class CitySearchTextField: UIView {
     loopMode: LottieLoopMode,
     completion: LottieCompletionBlock? = nil)
   {
-    lottieView.backgroundColor = .red
     lottieView.isHidden = false
     
     lottieView.play(

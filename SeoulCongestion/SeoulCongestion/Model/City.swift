@@ -11,11 +11,13 @@ struct City: Codable {
   let areaNM: String?
   let LIVE_PPLTN_STTS: LIVE_PPLTN_STTS?
   let AVG_ROAD_DATA: AVG_ROAD_DATA?
-  
+  let SBIKE_STTS: [SBIKE_STTS]?
+
   enum CodingKeys: String, CodingKey {
     case areaNM = "AREA_NM"
     case LIVE_PPLTN_STTS
     case AVG_ROAD_DATA
+    case SBIKE_STTS
   }
 }
 
@@ -74,4 +76,26 @@ struct AVG_ROAD_DATA: Codable {
     case roadTrafficTIME = "ROAD_TRFFIC_TIME"
 
   }
+}
+
+struct SBIKE_STTS: Codable {
+    let parkingCnt: String?
+    let rackCnt: String?
+    let shared: String?
+    let spotId: String?
+    let spotName: String?
+    let x: String?
+    let y: String?
+    let id: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case parkingCnt = "SBIKE_PARKING_CNT"
+        case rackCnt = "SBIKE_RACK_CNT"
+        case shared = "SBIKE_SHARED"
+        case spotId = "SBIKE_SPOT_ID"
+        case spotName = "SBIKE_SPOT_NM"
+        case x = "SBIKE_X"
+        case y = "SBIKE_Y"
+        case id = "_id"
+    }
 }
