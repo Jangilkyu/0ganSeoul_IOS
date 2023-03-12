@@ -29,4 +29,14 @@ class SeoulCities {
     }
     return 0
   }
+  
+  func getOneCenter(at indexPath: IndexPath) -> City? {
+      guard let cities = self.getCity(), indexPath.row < cities.count else {
+          print("Error: Invalid index path or empty city list")
+          return nil
+      }
+      let city = cities[indexPath.row]
+      return city
+  }
+  
 }

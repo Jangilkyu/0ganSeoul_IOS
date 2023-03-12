@@ -8,5 +8,5 @@
 import Foundation
 
 struct Cities: Codable {
-  let cities: [City]?
+  var cities: [City]?
 }

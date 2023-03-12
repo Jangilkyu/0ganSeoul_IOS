@@ -10,11 +10,13 @@ import Foundation
 struct SearchCities: Codable {
     let livePpltnStts: LivePpltnStts
     let avgRoadData: AvgRoadData
+    let sbikeStts: [SbikeStts]?
     let areaNm: String
 
     enum CodingKeys: String, CodingKey {
         case livePpltnStts = "LIVE_PPLTN_STTS"
         case avgRoadData = "AVG_ROAD_DATA"
+        case sbikeStts = "SBIKE_STTS"
         case areaNm = "AREA_NM"
     }
 }
@@ -60,4 +62,16 @@ struct AvgRoadData: Codable {
         case roadTrafficSpd = "ROAD_TRAFFIC_SPD"
         case id = "_id"
     }
+}
+
+struct SbikeStts: Codable {
+  let sbikeParkingCnt, sbikeRackCnt, sbikeShared, sbikeSpotID, sbikeSpotNM: String
+  
+  enum CodingKeys: String, CodingKey {
+      case sbikeParkingCnt = "SBIKE_PARKING_CNT"
+      case sbikeRackCnt = "SBIKE_RACK_CNT"
+      case sbikeShared = "SBIKE_SHARED"
+      case sbikeSpotID = "SBIKE_SPOT_ID"
+      case sbikeSpotNM = "SBIKE_SPOT_NM"
+  }
 }
