@@ -55,6 +55,7 @@ class CityDetailController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = SCColor.black.color
+    navigationController?.interactivePopGestureRecognizer?.delegate = self
     setup()
     backButton()
   }
@@ -66,8 +67,10 @@ class CityDetailController: UIViewController {
     avgRoadData = city.AVG_ROAD_DATA
     sbikeStts = city.SBIKE_STTS
     self.cityNm = city.areaNM
-
-    mainTitleLabel.text = "지금\n\(String(describing: city.areaNM!))\n에 방문하면?"
+    
+    if let cityNm = city.areaNM {
+      mainTitleLabel.text = "지금\n\(cityNm)\n에 방문하면?"
+    }
   }
   
   func backButton() {
@@ -241,4 +244,11 @@ extension CityDetailController: UICollectionViewDelegateFlowLayout {
       return CGSize(width: view.frame.width - 80 , height: 150)
     }
   }
+}
+
+extension CityDetailController: UIGestureRecognizerDelegate {
+  func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+      return true
+  }
+
 }
