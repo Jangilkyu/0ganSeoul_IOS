@@ -14,7 +14,7 @@ class MainController: UIViewController {
   var seoulCities: SeoulCities!
   var api: RestProcessor!
   var resHandler: ResHandler!
-  
+    
   let logoImageView : UIImageView = {
     let iv = UIImageView(image: UIImage(named: "logo"))
     return iv
@@ -37,9 +37,10 @@ class MainController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    view.backgroundColor = .white
     emptyView.isHidden = true
     self.citySearchTextField.textField.isEnabled = false
-    view.backgroundColor = .white
+    configureTFDelegate()
     
     // API fetch begins
     api = RestProcessor()
@@ -62,6 +63,10 @@ class MainController: UIViewController {
       withHttpMethod: .get,
       usage: .seoulCitiesData
     )
+  }
+  
+  private func configureTFDelegate() {
+    self.citySearchTextField.textField.delegate = self
   }
   
   private func addViews() {
@@ -102,6 +107,10 @@ class MainController: UIViewController {
   
   @objc func handleSearchButton() {
     getCitiesSearchAPI()
+  }
+  
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    self.view.endEditing(true)
   }
   
   private func getCitiesSearchAPI() {
@@ -196,6 +205,7 @@ extension MainController: SkeletonCollectionViewDataSource {
     _ collectionView: UICollectionView,
     didSelectItemAt indexPath: IndexPath
   ) {
+    view.endEditing(true)
     let city = self.seoulCities.getOneCenter(at: indexPath)
     let cityDetailController = CityDetailController(city)
     navigationController?.pushViewController(cityDetailController, animated: true)
@@ -310,5 +320,13 @@ extension MainController: RestProcessorRequestDelegate {
     _ usage: EndPoint
   ) {
     
+  }
+}
+
+extension MainController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    getCitiesSearchAPI()
+    textField.resignFirstResponder()
+    return true
   }
 }
