@@ -25,10 +25,19 @@ class PopulationCongestionCell: UICollectionViewCell {
       
       let popAvg = (self.areaPpltnMIN + self.areaPpltnMAX) / 2
       
-      populationAvgLabel.text  = "\(popAvg.formattedComma)명"
-      malePopAvgPerLabel.text = "\(population.malePpltnRATE!)%"
-      femalePopAvgPerLabel.text = "\(population.femalePpltnRATE!)%"
-      resntPpltnAvgLabel.text =  "\(population.resntPpltnRATE!)%"
+      populationAvgLabel.lb.text = "\(popAvg.formattedComma)명"
+      
+      if let malePpltnRATE = population.malePpltnRATE {
+        malePopAvgPerLabel.lb.text = "\(malePpltnRATE)%"
+      }
+      
+      if let femalePpltnRATE = population.femalePpltnRATE {
+        femalePopAvgPerLabel.lb.text = "\(femalePpltnRATE)%"
+      }
+      
+      if let resntPpltnRATE = population.resntPpltnRATE {
+        resntPpltnAvgLabel.lb.text =  "\(resntPpltnRATE)%"
+      }
     }
   }
   
@@ -45,17 +54,7 @@ class PopulationCongestionCell: UICollectionViewCell {
     return lb
   }()
   
-  let populationAvgLabel: UILabel = {
-    let lb = UILabel()
-    lb.numberOfLines = 0
-    lb.textAlignment = .right
-    lb.font = SCFont.bold(size: 14)
-    lb.textColor = SCColor.white.color
-    lb.backgroundColor = SCColor.black.color
-    lb.clipsToBounds = true
-    lb.layer.cornerRadius = 2.0
-    return lb
-  }()
+  lazy var populationAvgLabel = RatioLabelView(bgColor: .black)
   
   let malePopAvgLabel: UILabel = {
     let lb = UILabel()
@@ -65,17 +64,7 @@ class PopulationCongestionCell: UICollectionViewCell {
     return lb
   }()
   
-  let malePopAvgPerLabel: UILabel = {
-    let lb = UILabel()
-    lb.numberOfLines = 0
-    lb.textAlignment = .right
-    lb.font = SCFont.bold(size: 14)
-    lb.textColor = SCColor.white.color
-    lb.backgroundColor = SCColor.blue.color
-    lb.clipsToBounds = true
-    lb.layer.cornerRadius = 2.0
-    return lb
-  }()
+  let malePopAvgPerLabel = RatioLabelView(bgColor: .blue)
   
   let femalePopAvgLabel: UILabel = {
     let lb = UILabel()
@@ -85,17 +74,7 @@ class PopulationCongestionCell: UICollectionViewCell {
     return lb
   }()
   
-  let femalePopAvgPerLabel: UILabel = {
-    let lb = UILabel()
-    lb.numberOfLines = 0
-    lb.textAlignment = .right
-    lb.font = SCFont.bold(size: 14)
-    lb.textColor = SCColor.white.color
-    lb.backgroundColor = SCColor.blue.color
-    lb.clipsToBounds = true
-    lb.layer.cornerRadius = 2.0
-    return lb
-  }()
+  let femalePopAvgPerLabel = RatioLabelView(bgColor: .blue)
   
   let resntPpltnLabel: UILabel = {
     let lb = UILabel()
@@ -105,19 +84,8 @@ class PopulationCongestionCell: UICollectionViewCell {
     return lb
   }()
   
-  let resntPpltnAvgLabel: UILabel = {
-    let lb = UILabel()
-    lb.numberOfLines = 0
-    lb.textAlignment = .right
-    lb.font = SCFont.bold(size: 14)
-    lb.textColor = SCColor.white.color
-    lb.backgroundColor = SCColor.blue.color
-    lb.clipsToBounds = true
-    lb.layer.cornerRadius = 2.0
+  let resntPpltnAvgLabel = RatioLabelView(bgColor: .blue)
 
-    return lb
-  }()
-  
   override init(frame: CGRect) {
     super.init(frame: frame)
     backgroundColor = .white
@@ -169,7 +137,7 @@ class PopulationCongestionCell: UICollectionViewCell {
   
   private func livePopulationAvgLabelConstraints() {
     livePopulationAvgLabel.translatesAutoresizingMaskIntoConstraints = false
-    livePopulationAvgLabel.heightAnchor.constraint(equalToConstant: 18).isActive = true
+    livePopulationAvgLabel.centerYAnchor.constraint(equalTo: populationAvgLabel.centerYAnchor).isActive = true
     livePopulationAvgLabel.topAnchor.constraint(equalTo: topAnchor, constant: 23).isActive = true
     livePopulationAvgLabel.leadingAnchor.constraint(equalTo: populationImageView.trailingAnchor, constant: 16).isActive = true
   }
@@ -183,21 +151,22 @@ class PopulationCongestionCell: UICollectionViewCell {
   
   private func malePopAvgLabelConstraints() {
     malePopAvgLabel.translatesAutoresizingMaskIntoConstraints = false
-    malePopAvgLabel.heightAnchor.constraint(equalToConstant: 18).isActive = true
+    malePopAvgLabel.centerYAnchor.constraint(equalTo: malePopAvgPerLabel.centerYAnchor).isActive = true
     malePopAvgLabel.topAnchor.constraint(equalTo: livePopulationAvgLabel.bottomAnchor, constant: 1).isActive = true
     malePopAvgLabel.leadingAnchor.constraint(equalTo: populationImageView.trailingAnchor, constant: 16).isActive = true
   }
   
   private func malePopAvgPerLabelConstraints() {
     malePopAvgPerLabel.translatesAutoresizingMaskIntoConstraints = false
-    malePopAvgPerLabel.topAnchor.constraint(equalTo: livePopulationAvgLabel.bottomAnchor, constant: 1).isActive = true
+    malePopAvgPerLabel.heightAnchor.constraint(equalToConstant: 18).isActive = true
+    malePopAvgPerLabel.topAnchor.constraint(equalTo: livePopulationAvgLabel.bottomAnchor, constant: 3).isActive = true
     malePopAvgPerLabel.leadingAnchor.constraint(equalTo: malePopAvgLabel.trailingAnchor, constant: 14).isActive = true
-    malePopAvgPerLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25).isActive = true
+    malePopAvgPerLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24).isActive = true
   }
   
   private func femalePopAvgLabelConstraints() {
     femalePopAvgLabel.translatesAutoresizingMaskIntoConstraints = false
-    femalePopAvgLabel.heightAnchor.constraint(equalToConstant: 18).isActive = true
+    femalePopAvgLabel.centerYAnchor.constraint(equalTo: femalePopAvgPerLabel.centerYAnchor).isActive = true
     femalePopAvgLabel.topAnchor.constraint(equalTo: malePopAvgLabel.bottomAnchor, constant: 1).isActive = true
     femalePopAvgLabel.leadingAnchor.constraint(equalTo: populationImageView.trailingAnchor, constant: 16).isActive = true
   }
@@ -205,14 +174,14 @@ class PopulationCongestionCell: UICollectionViewCell {
   private func femalePopAvgPerLabelConstraints() {
     femalePopAvgPerLabel.translatesAutoresizingMaskIntoConstraints = false
     femalePopAvgPerLabel.heightAnchor.constraint(equalToConstant: 18).isActive = true
-    femalePopAvgPerLabel.topAnchor.constraint(equalTo: malePopAvgPerLabel.bottomAnchor, constant: 1).isActive = true
+    femalePopAvgPerLabel.topAnchor.constraint(equalTo: malePopAvgPerLabel.bottomAnchor, constant: 3).isActive = true
     femalePopAvgPerLabel.leadingAnchor.constraint(equalTo: femalePopAvgLabel.trailingAnchor, constant: 14).isActive = true
-    femalePopAvgPerLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25).isActive = true
+    femalePopAvgPerLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24).isActive = true
   }
   
   private func resntPpltnLabelConstraints() {
     resntPpltnLabel.translatesAutoresizingMaskIntoConstraints = false
-    resntPpltnLabel.heightAnchor.constraint(equalToConstant: 18).isActive = true
+    resntPpltnLabel.centerYAnchor.constraint(equalTo: resntPpltnAvgLabel.centerYAnchor).isActive = true
     resntPpltnLabel.topAnchor.constraint(equalTo: femalePopAvgLabel.bottomAnchor, constant: 1).isActive = true
     resntPpltnLabel.leadingAnchor.constraint(equalTo: populationImageView.trailingAnchor, constant: 16).isActive = true
   }
@@ -220,9 +189,9 @@ class PopulationCongestionCell: UICollectionViewCell {
   private func resntPpltnAvgLabelConstraints() {
     resntPpltnAvgLabel.translatesAutoresizingMaskIntoConstraints = false
     resntPpltnAvgLabel.heightAnchor.constraint(equalToConstant: 18).isActive = true
-    resntPpltnAvgLabel.topAnchor.constraint(equalTo: femalePopAvgPerLabel.bottomAnchor, constant: 1).isActive = true
+    resntPpltnAvgLabel.topAnchor.constraint(equalTo: femalePopAvgPerLabel.bottomAnchor, constant: 3).isActive = true
     resntPpltnAvgLabel.leadingAnchor.constraint(equalTo: resntPpltnLabel.trailingAnchor, constant: 14).isActive = true
-    resntPpltnAvgLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25).isActive = true
+    resntPpltnAvgLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24).isActive = true
   }
   
 }

@@ -56,6 +56,7 @@
 		FE74022029814B510014629A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74021F29814B510014629A /* SceneDelegate.swift */; };
 		FE74022729814B520014629A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE74022629814B520014629A /* Assets.xcassets */; };
 		FE74022A29814B520014629A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE74022829814B520014629A /* LaunchScreen.storyboard */; };
+		FEA773AC29CB43C30095B8FE /* RatioLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA773AB29CB43C30095B8FE /* RatioLabelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		FE74022629814B520014629A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE74022929814B520014629A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE74022B29814B520014629A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEA773AB29CB43C30095B8FE /* RatioLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatioLabelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				FE06CBBF29BDDABF003297E9 /* StandardTimeView.swift */,
+				FEA773AB29CB43C30095B8FE /* RatioLabelView.swift */,
 			);
 			path = DetailView;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				FE1EF14A29BE087A00FF7113 /* SeoulCities.swift in Sources */,
 				FE74022029814B510014629A /* SceneDelegate.swift in Sources */,
 				FE06CBF129BDDAE7003297E9 /* SeoulCongestion++Bundle.swift in Sources */,
+				FEA773AC29CB43C30095B8FE /* RatioLabelView.swift in Sources */,
 				FE06CB8929BDD698003297E9 /* ResHandler.swift in Sources */,
 				FE06CBD429BDDABF003297E9 /* RoadCongestionCell.swift in Sources */,
 				FE06CBEE29BDDAE7003297E9 /* Extension+String.swift in Sources */,
