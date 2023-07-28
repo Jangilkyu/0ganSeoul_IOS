@@ -43,6 +43,7 @@ class BikeInfoController: UIViewController {
     super.viewDidLoad()
     view.backgroundColor = SCColor.black.color
     setup()
+    backButton()
   }
   
   convenience init(_ bike: [SBIKE_STTS]? = nil, _ city: String? = nil) {
@@ -75,6 +76,31 @@ class BikeInfoController: UIViewController {
     addViews()
     setConstraints()
     configureCollectionView()
+  }
+  
+  func backButton() {
+    let backButton = UIButton(type: .custom)
+    backButton.setImage(UIImage(named: "backPolygon"), for: .normal)
+    backButton.heightAnchor.constraint(equalToConstant: 29).isActive = true
+    backButton.imageEdgeInsets = UIEdgeInsets(
+      top: 0,
+      left: 8,
+      bottom: 0,
+      right: 0
+    )
+    backButton.addTarget(
+      self,
+      action: #selector(backButtonTapped),
+      for: .touchUpInside
+    )
+    
+    let backBarButtonItem = UIBarButtonItem(customView: backButton)
+    backButton.tintColor = SCColor.white.color
+    navigationItem.leftBarButtonItem = backBarButtonItem
+  }
+  
+  @objc func backButtonTapped() {
+    navigationController?.popViewController(animated: true)
   }
   
   private func addViews() {
