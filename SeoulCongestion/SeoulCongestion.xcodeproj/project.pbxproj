@@ -7,21 +7,109 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE06CB5129BDD687003297E9 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB4129BDD686003297E9 /* loading.json */; };
+		FE06CB5229BDD687003297E9 /* search-loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB4229BDD686003297E9 /* search-loading.swift */; };
+		FE06CB8729BDD698003297E9 /* RestProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB8329BDD698003297E9 /* RestProcessor.swift */; };
+		FE06CB8829BDD698003297E9 /* RestProcessor+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB8429BDD698003297E9 /* RestProcessor+Model.swift */; };
+		FE06CB8929BDD698003297E9 /* ResHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB8529BDD698003297E9 /* ResHandler.swift */; };
+		FE06CB8A29BDD698003297E9 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CB8629BDD698003297E9 /* EndPoint.swift */; };
+		FE06CB9529BDD6CC003297E9 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB8C29BDD6CC003297E9 /* Pretendard-Regular.otf */; };
+		FE06CB9629BDD6CC003297E9 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB8D29BDD6CC003297E9 /* Pretendard-Black.otf */; };
+		FE06CB9729BDD6CC003297E9 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB8E29BDD6CC003297E9 /* Pretendard-Medium.otf */; };
+		FE06CB9829BDD6CC003297E9 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB8F29BDD6CC003297E9 /* Pretendard-Light.otf */; };
+		FE06CB9929BDD6CC003297E9 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB9029BDD6CC003297E9 /* Pretendard-ExtraBold.otf */; };
+		FE06CB9A29BDD6CC003297E9 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB9129BDD6CC003297E9 /* Pretendard-Bold.otf */; };
+		FE06CB9B29BDD6CC003297E9 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB9229BDD6CC003297E9 /* Pretendard-Thin.otf */; };
+		FE06CB9C29BDD6CC003297E9 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB9329BDD6CC003297E9 /* Pretendard-ExtraLight.otf */; };
+		FE06CB9D29BDD6CC003297E9 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE06CB9429BDD6CC003297E9 /* Pretendard-SemiBold.otf */; };
+		FE06CBD229BDDABF003297E9 /* PopulationCongestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBBB29BDDABF003297E9 /* PopulationCongestionCell.swift */; };
+		FE06CBD329BDDABF003297E9 /* PublicBikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBBC29BDDABF003297E9 /* PublicBikeCell.swift */; };
+		FE06CBD429BDDABF003297E9 /* RoadCongestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBBD29BDDABF003297E9 /* RoadCongestionCell.swift */; };
+		FE06CBD529BDDABF003297E9 /* StandardTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBBF29BDDABF003297E9 /* StandardTimeView.swift */; };
+		FE06CBD629BDDABF003297E9 /* BikeDockStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBC229BDDABF003297E9 /* BikeDockStatusCell.swift */; };
+		FE06CBD729BDDABF003297E9 /* BikeAverageUtilizationRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBC429BDDABF003297E9 /* BikeAverageUtilizationRateView.swift */; };
+		FE06CBD829BDDABF003297E9 /* AvailableBikeCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBC529BDDABF003297E9 /* AvailableBikeCountView.swift */; };
+		FE06CBD929BDDABF003297E9 /* BikeInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBC629BDDABF003297E9 /* BikeInfoController.swift */; };
+		FE06CBDA29BDDABF003297E9 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBC729BDDABF003297E9 /* MainController.swift */; };
+		FE06CBDB29BDDABF003297E9 /* CityDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBC829BDDABF003297E9 /* CityDetailController.swift */; };
+		FE06CBDC29BDDABF003297E9 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBCA29BDDABF003297E9 /* MainCell.swift */; };
+		FE06CBDD29BDDABF003297E9 /* RoadTrafficView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBCC29BDDABF003297E9 /* RoadTrafficView.swift */; };
+		FE06CBDE29BDDABF003297E9 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBCD29BDDABF003297E9 /* EmptyView.swift */; };
+		FE06CBDF29BDDABF003297E9 /* AreaCongestLvlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBCE29BDDABF003297E9 /* AreaCongestLvlView.swift */; };
+		FE06CBE029BDDABF003297E9 /* CityCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBCF29BDDABF003297E9 /* CityCountView.swift */; };
+		FE06CBE129BDDABF003297E9 /* CitySearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBD029BDDABF003297E9 /* CitySearchTextField.swift */; };
+		FE06CBE229BDDABF003297E9 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBD129BDDABF003297E9 /* MainNavigationController.swift */; };
+		FE06CBEC29BDDAE7003297E9 /* SCColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBE429BDDAE7003297E9 /* SCColor.swift */; };
+		FE06CBED29BDDAE7003297E9 /* Extension+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBE629BDDAE7003297E9 /* Extension+UITextField.swift */; };
+		FE06CBEE29BDDAE7003297E9 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBE729BDDAE7003297E9 /* Extension+String.swift */; };
+		FE06CBEF29BDDAE7003297E9 /* Extension+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBE829BDDAE7003297E9 /* Extension+Int.swift */; };
+		FE06CBF029BDDAE7003297E9 /* Extension+UIview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBE929BDDAE7003297E9 /* Extension+UIview.swift */; };
+		FE06CBF129BDDAE7003297E9 /* SeoulCongestion++Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBEA29BDDAE7003297E9 /* SeoulCongestion++Bundle.swift */; };
+		FE06CBF229BDDAE7003297E9 /* SCFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06CBEB29BDDAE7003297E9 /* SCFont.swift */; };
+		FE06CBF829BDDBE3003297E9 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FE06CBF729BDDBE3003297E9 /* Lottie */; };
+		FE06CBFE29BDE11C003297E9 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = FE06CBFD29BDE11C003297E9 /* SkeletonView */; };
+		FE1EF14729BE087A00FF7113 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1EF14329BE087A00FF7113 /* City.swift */; };
+		FE1EF14829BE087A00FF7113 /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1EF14429BE087A00FF7113 /* Cities.swift */; };
+		FE1EF14929BE087A00FF7113 /* SearchCities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1EF14529BE087A00FF7113 /* SearchCities.swift */; };
+		FE1EF14A29BE087A00FF7113 /* SeoulCities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1EF14629BE087A00FF7113 /* SeoulCities.swift */; };
 		FE74021E29814B510014629A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74021D29814B510014629A /* AppDelegate.swift */; };
 		FE74022029814B510014629A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74021F29814B510014629A /* SceneDelegate.swift */; };
-		FE74022229814B510014629A /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74022129814B510014629A /* MainController.swift */; };
 		FE74022729814B520014629A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE74022629814B520014629A /* Assets.xcassets */; };
 		FE74022A29814B520014629A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE74022829814B520014629A /* LaunchScreen.storyboard */; };
+		FEA773AC29CB43C30095B8FE /* RatioLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA773AB29CB43C30095B8FE /* RatioLabelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE06CB4129BDD686003297E9 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		FE06CB4229BDD686003297E9 /* search-loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "search-loading.swift"; sourceTree = "<group>"; };
+		FE06CB8329BDD698003297E9 /* RestProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestProcessor.swift; sourceTree = "<group>"; };
+		FE06CB8429BDD698003297E9 /* RestProcessor+Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RestProcessor+Model.swift"; sourceTree = "<group>"; };
+		FE06CB8529BDD698003297E9 /* ResHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResHandler.swift; sourceTree = "<group>"; };
+		FE06CB8629BDD698003297E9 /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		FE06CB8C29BDD6CC003297E9 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		FE06CB8D29BDD6CC003297E9 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
+		FE06CB8E29BDD6CC003297E9 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		FE06CB8F29BDD6CC003297E9 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		FE06CB9029BDD6CC003297E9 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		FE06CB9129BDD6CC003297E9 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		FE06CB9229BDD6CC003297E9 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		FE06CB9329BDD6CC003297E9 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		FE06CB9429BDD6CC003297E9 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		FE06CBBB29BDDABF003297E9 /* PopulationCongestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopulationCongestionCell.swift; sourceTree = "<group>"; };
+		FE06CBBC29BDDABF003297E9 /* PublicBikeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicBikeCell.swift; sourceTree = "<group>"; };
+		FE06CBBD29BDDABF003297E9 /* RoadCongestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoadCongestionCell.swift; sourceTree = "<group>"; };
+		FE06CBBF29BDDABF003297E9 /* StandardTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardTimeView.swift; sourceTree = "<group>"; };
+		FE06CBC229BDDABF003297E9 /* BikeDockStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeDockStatusCell.swift; sourceTree = "<group>"; };
+		FE06CBC429BDDABF003297E9 /* BikeAverageUtilizationRateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeAverageUtilizationRateView.swift; sourceTree = "<group>"; };
+		FE06CBC529BDDABF003297E9 /* AvailableBikeCountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableBikeCountView.swift; sourceTree = "<group>"; };
+		FE06CBC629BDDABF003297E9 /* BikeInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeInfoController.swift; sourceTree = "<group>"; };
+		FE06CBC729BDDABF003297E9 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		FE06CBC829BDDABF003297E9 /* CityDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDetailController.swift; sourceTree = "<group>"; };
+		FE06CBCA29BDDABF003297E9 /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		FE06CBCC29BDDABF003297E9 /* RoadTrafficView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoadTrafficView.swift; sourceTree = "<group>"; };
+		FE06CBCD29BDDABF003297E9 /* EmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		FE06CBCE29BDDABF003297E9 /* AreaCongestLvlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaCongestLvlView.swift; sourceTree = "<group>"; };
+		FE06CBCF29BDDABF003297E9 /* CityCountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityCountView.swift; sourceTree = "<group>"; };
+		FE06CBD029BDDABF003297E9 /* CitySearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitySearchTextField.swift; sourceTree = "<group>"; };
+		FE06CBD129BDDABF003297E9 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		FE06CBE429BDDAE7003297E9 /* SCColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCColor.swift; sourceTree = "<group>"; };
+		FE06CBE629BDDAE7003297E9 /* Extension+UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UITextField.swift"; sourceTree = "<group>"; };
+		FE06CBE729BDDAE7003297E9 /* Extension+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		FE06CBE829BDDAE7003297E9 /* Extension+Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+Int.swift"; sourceTree = "<group>"; };
+		FE06CBE929BDDAE7003297E9 /* Extension+UIview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIview.swift"; sourceTree = "<group>"; };
+		FE06CBEA29BDDAE7003297E9 /* SeoulCongestion++Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SeoulCongestion++Bundle.swift"; sourceTree = "<group>"; };
+		FE06CBEB29BDDAE7003297E9 /* SCFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCFont.swift; sourceTree = "<group>"; };
+		FE1EF14329BE087A00FF7113 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		FE1EF14429BE087A00FF7113 /* Cities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
+		FE1EF14529BE087A00FF7113 /* SearchCities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCities.swift; sourceTree = "<group>"; };
+		FE1EF14629BE087A00FF7113 /* SeoulCities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeoulCities.swift; sourceTree = "<group>"; };
 		FE74021A29814B510014629A /* SeoulCongestion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeoulCongestion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE74021D29814B510014629A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE74021F29814B510014629A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FE74022129814B510014629A /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		FE74022629814B520014629A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE74022929814B520014629A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE74022B29814B520014629A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEA773AB29CB43C30095B8FE /* RatioLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatioLabelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,12 +117,164 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE06CBFE29BDE11C003297E9 /* SkeletonView in Frameworks */,
+				FE06CBF829BDDBE3003297E9 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE06CB4029BDD686003297E9 /* lottie */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CB4129BDD686003297E9 /* loading.json */,
+				FE06CB4229BDD686003297E9 /* search-loading.swift */,
+			);
+			path = lottie;
+			sourceTree = "<group>";
+		};
+		FE06CB8229BDD698003297E9 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CB8329BDD698003297E9 /* RestProcessor.swift */,
+				FE06CB8429BDD698003297E9 /* RestProcessor+Model.swift */,
+				FE06CB8529BDD698003297E9 /* ResHandler.swift */,
+				FE06CB8629BDD698003297E9 /* EndPoint.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		FE06CB8B29BDD6CC003297E9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CB8C29BDD6CC003297E9 /* Pretendard-Regular.otf */,
+				FE06CB8D29BDD6CC003297E9 /* Pretendard-Black.otf */,
+				FE06CB8E29BDD6CC003297E9 /* Pretendard-Medium.otf */,
+				FE06CB8F29BDD6CC003297E9 /* Pretendard-Light.otf */,
+				FE06CB9029BDD6CC003297E9 /* Pretendard-ExtraBold.otf */,
+				FE06CB9129BDD6CC003297E9 /* Pretendard-Bold.otf */,
+				FE06CB9229BDD6CC003297E9 /* Pretendard-Thin.otf */,
+				FE06CB9329BDD6CC003297E9 /* Pretendard-ExtraLight.otf */,
+				FE06CB9429BDD6CC003297E9 /* Pretendard-SemiBold.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FE06CBB929BDDABF003297E9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CBBA29BDDABF003297E9 /* DetailCell */,
+				FE06CBBE29BDDABF003297E9 /* DetailView */,
+				FE06CBC029BDDABF003297E9 /* Bike */,
+				FE06CBC729BDDABF003297E9 /* MainController.swift */,
+				FE06CBC829BDDABF003297E9 /* CityDetailController.swift */,
+				FE06CBC929BDDABF003297E9 /* Cell */,
+				FE06CBCB29BDDABF003297E9 /* View */,
+				FE06CBD129BDDABF003297E9 /* MainNavigationController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FE06CBBA29BDDABF003297E9 /* DetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CBBB29BDDABF003297E9 /* PopulationCongestionCell.swift */,
+				FE06CBBC29BDDABF003297E9 /* PublicBikeCell.swift */,
+				FE06CBBD29BDDABF003297E9 /* RoadCongestionCell.swift */,
+			);
+			path = DetailCell;
+			sourceTree = "<group>";
+		};
+		FE06CBBE29BDDABF003297E9 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CBBF29BDDABF003297E9 /* StandardTimeView.swift */,
+				FEA773AB29CB43C30095B8FE /* RatioLabelView.swift */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
+		FE06CBC029BDDABF003297E9 /* Bike */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CBC129BDDABF003297E9 /* Cell */,
+				FE06CBC329BDDABF003297E9 /* View */,
+				FE06CBC629BDDABF003297E9 /* BikeInfoController.swift */,
+			);
+			path = Bike;
+			sourceTree = "<group>";
+		};
+		FE06CBC129BDDABF003297E9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CBC229BDDABF003297E9 /* BikeDockStatusCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FE06CBC329BDDABF003297E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CBC429BDDABF003297E9 /* BikeAverageUtilizationRateView.swift */,
+				FE06CBC529BDDABF003297E9 /* AvailableBikeCountView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FE06CBC929BDDABF003297E9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CBCA29BDDABF003297E9 /* MainCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FE06CBCB29BDDABF003297E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CBCC29BDDABF003297E9 /* RoadTrafficView.swift */,
+				FE06CBCD29BDDABF003297E9 /* EmptyView.swift */,
+				FE06CBCE29BDDABF003297E9 /* AreaCongestLvlView.swift */,
+				FE06CBCF29BDDABF003297E9 /* CityCountView.swift */,
+				FE06CBD029BDDABF003297E9 /* CitySearchTextField.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FE06CBE329BDDAE7003297E9 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CBE429BDDAE7003297E9 /* SCColor.swift */,
+				FE06CBE529BDDAE7003297E9 /* Extension */,
+				FE06CBEA29BDDAE7003297E9 /* SeoulCongestion++Bundle.swift */,
+				FE06CBEB29BDDAE7003297E9 /* SCFont.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		FE06CBE529BDDAE7003297E9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CBE629BDDAE7003297E9 /* Extension+UITextField.swift */,
+				FE06CBE729BDDAE7003297E9 /* Extension+String.swift */,
+				FE06CBE829BDDAE7003297E9 /* Extension+Int.swift */,
+				FE06CBE929BDDAE7003297E9 /* Extension+UIview.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FE1EF14229BE087A00FF7113 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FE1EF14329BE087A00FF7113 /* City.swift */,
+				FE1EF14429BE087A00FF7113 /* Cities.swift */,
+				FE1EF14529BE087A00FF7113 /* SearchCities.swift */,
+				FE1EF14629BE087A00FF7113 /* SeoulCities.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FE74021129814B510014629A = {
 			isa = PBXGroup;
 			children = (
@@ -54,9 +294,14 @@
 		FE74021C29814B510014629A /* SeoulCongestion */ = {
 			isa = PBXGroup;
 			children = (
+				FE1EF14229BE087A00FF7113 /* Model */,
+				FE06CBE329BDDAE7003297E9 /* Util */,
+				FE06CBB929BDDABF003297E9 /* Controllers */,
+				FE06CB8B29BDD6CC003297E9 /* Fonts */,
+				FE06CB4029BDD686003297E9 /* lottie */,
+				FE06CB8229BDD698003297E9 /* API */,
 				FE74021D29814B510014629A /* AppDelegate.swift */,
 				FE74021F29814B510014629A /* SceneDelegate.swift */,
-				FE74022129814B510014629A /* MainController.swift */,
 				FE74022629814B520014629A /* Assets.xcassets */,
 				FE74022829814B520014629A /* LaunchScreen.storyboard */,
 				FE74022B29814B520014629A /* Info.plist */,
@@ -80,6 +325,10 @@
 			dependencies = (
 			);
 			name = SeoulCongestion;
+			packageProductDependencies = (
+				FE06CBF729BDDBE3003297E9 /* Lottie */,
+				FE06CBFD29BDE11C003297E9 /* SkeletonView */,
+			);
 			productName = SeoulCongestion;
 			productReference = FE74021A29814B510014629A /* SeoulCongestion.app */;
 			productType = "com.apple.product-type.application";
@@ -108,6 +357,10 @@
 				Base,
 			);
 			mainGroup = FE74021129814B510014629A;
+			packageReferences = (
+				FE06CBF629BDDBE3003297E9 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				FE06CBFC29BDE11C003297E9 /* XCRemoteSwiftPackageReference "SkeletonView" */,
+			);
 			productRefGroup = FE74021B29814B510014629A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -122,8 +375,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE06CB9C29BDD6CC003297E9 /* Pretendard-ExtraLight.otf in Resources */,
+				FE06CB9A29BDD6CC003297E9 /* Pretendard-Bold.otf in Resources */,
+				FE06CB9929BDD6CC003297E9 /* Pretendard-ExtraBold.otf in Resources */,
+				FE06CB9829BDD6CC003297E9 /* Pretendard-Light.otf in Resources */,
+				FE06CB9729BDD6CC003297E9 /* Pretendard-Medium.otf in Resources */,
+				FE06CB9629BDD6CC003297E9 /* Pretendard-Black.otf in Resources */,
+				FE06CB9D29BDD6CC003297E9 /* Pretendard-SemiBold.otf in Resources */,
 				FE74022A29814B520014629A /* LaunchScreen.storyboard in Resources */,
+				FE06CB9B29BDD6CC003297E9 /* Pretendard-Thin.otf in Resources */,
 				FE74022729814B520014629A /* Assets.xcassets in Resources */,
+				FE06CB5129BDD687003297E9 /* loading.json in Resources */,
+				FE06CB9529BDD6CC003297E9 /* Pretendard-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,9 +397,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE74022229814B510014629A /* MainController.swift in Sources */,
+				FE06CBD529BDDABF003297E9 /* StandardTimeView.swift in Sources */,
+				FE06CBD229BDDABF003297E9 /* PopulationCongestionCell.swift in Sources */,
+				FE06CBD329BDDABF003297E9 /* PublicBikeCell.swift in Sources */,
+				FE06CBE029BDDABF003297E9 /* CityCountView.swift in Sources */,
 				FE74021E29814B510014629A /* AppDelegate.swift in Sources */,
+				FE06CBED29BDDAE7003297E9 /* Extension+UITextField.swift in Sources */,
+				FE1EF14829BE087A00FF7113 /* Cities.swift in Sources */,
+				FE06CBDA29BDDABF003297E9 /* MainController.swift in Sources */,
+				FE06CBDF29BDDABF003297E9 /* AreaCongestLvlView.swift in Sources */,
+				FE06CBF229BDDAE7003297E9 /* SCFont.swift in Sources */,
+				FE06CBD829BDDABF003297E9 /* AvailableBikeCountView.swift in Sources */,
+				FE06CBE129BDDABF003297E9 /* CitySearchTextField.swift in Sources */,
+				FE06CBEF29BDDAE7003297E9 /* Extension+Int.swift in Sources */,
+				FE1EF14A29BE087A00FF7113 /* SeoulCities.swift in Sources */,
 				FE74022029814B510014629A /* SceneDelegate.swift in Sources */,
+				FE06CBF129BDDAE7003297E9 /* SeoulCongestion++Bundle.swift in Sources */,
+				FEA773AC29CB43C30095B8FE /* RatioLabelView.swift in Sources */,
+				FE06CB8929BDD698003297E9 /* ResHandler.swift in Sources */,
+				FE06CBD429BDDABF003297E9 /* RoadCongestionCell.swift in Sources */,
+				FE06CBEE29BDDAE7003297E9 /* Extension+String.swift in Sources */,
+				FE06CBD729BDDABF003297E9 /* BikeAverageUtilizationRateView.swift in Sources */,
+				FE06CBE229BDDABF003297E9 /* MainNavigationController.swift in Sources */,
+				FE06CBDB29BDDABF003297E9 /* CityDetailController.swift in Sources */,
+				FE06CBD629BDDABF003297E9 /* BikeDockStatusCell.swift in Sources */,
+				FE06CBDE29BDDABF003297E9 /* EmptyView.swift in Sources */,
+				FE06CB8A29BDD698003297E9 /* EndPoint.swift in Sources */,
+				FE06CB5229BDD687003297E9 /* search-loading.swift in Sources */,
+				FE06CBDC29BDDABF003297E9 /* MainCell.swift in Sources */,
+				FE06CBF029BDDAE7003297E9 /* Extension+UIview.swift in Sources */,
+				FE06CB8729BDD698003297E9 /* RestProcessor.swift in Sources */,
+				FE1EF14929BE087A00FF7113 /* SearchCities.swift in Sources */,
+				FE06CBDD29BDDABF003297E9 /* RoadTrafficView.swift in Sources */,
+				FE06CB8829BDD698003297E9 /* RestProcessor+Model.swift in Sources */,
+				FE06CBD929BDDABF003297E9 /* BikeInfoController.swift in Sources */,
+				FE1EF14729BE087A00FF7113 /* City.swift in Sources */,
+				FE06CBEC29BDDAE7003297E9 /* SCColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +500,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				INFOPLIST_KEY_CFBundleDisplayName = "공간서울";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -258,7 +555,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				INFOPLIST_KEY_CFBundleDisplayName = "공간서울";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -274,24 +572,27 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.1.7;
 				DEVELOPMENT_TEAM = BMBM6CH9KR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeoulCongestion/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jangilkyu.SeoulCongestion;
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jangilkyu.Seoul0gan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -301,24 +602,27 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.1.7;
 				DEVELOPMENT_TEAM = BMBM6CH9KR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeoulCongestion/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jangilkyu.SeoulCongestion;
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jangilkyu.Seoul0gan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -344,6 +648,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FE06CBF629BDDBE3003297E9 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.3;
+			};
+		};
+		FE06CBFC29BDE11C003297E9 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FE06CBF729BDDBE3003297E9 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE06CBF629BDDBE3003297E9 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+		FE06CBFD29BDE11C003297E9 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE06CBFC29BDE11C003297E9 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FE74021229814B510014629A /* Project object */;
 }
