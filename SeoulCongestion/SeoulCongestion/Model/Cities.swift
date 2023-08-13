@@ -1,6 +1,6 @@
 //
 //  Cities.swift
-//  SeoulCongestion
+//  SeouelCongestion
 //
 //  Created by jangilkyu on 2023/02/04.
 //
