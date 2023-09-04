@@ -205,9 +205,11 @@ class MainController: UIViewController {
   
   private func emptyViewConstraints() {
     emptyView.translatesAutoresizingMaskIntoConstraints = false
-    emptyView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 50).isActive =  true
-    emptyView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 121).isActive = true
-    emptyView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -121).isActive = true
+    emptyView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 150).isActive =  true
+    emptyView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+
+//    emptyView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 121).isActive = true
+//    emptyView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -121).isActive = true
   }
   
   private func categorizeCities() {
