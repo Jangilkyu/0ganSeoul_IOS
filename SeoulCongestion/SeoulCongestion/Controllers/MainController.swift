@@ -14,31 +14,17 @@ class MainController: UIViewController {
   var seoulCities: SeoulCities!
   var api: RestProcessor!
   var resHandler: ResHandler!
-  
-  let topLogoImageView: UIImageView = {
-    let imageView = UIImageView(image: UIImage(named: "topLogo"))
-    imageView.contentMode = .scaleAspectFit
-    return imageView
-  }()
-  
-  let leftLogoImageView: UIImageView = {
-    let imageView = UIImageView(image: UIImage(named: "leftLogo"))
-    imageView.contentMode = .scaleAspectFit
-    return imageView
-  }()
     
+  let logoImageView : UIImageView = {
+    let iv = UIImageView(image: UIImage(named: "logo"))
+    return iv
+  }()
+  
   let citySearchTextField = CitySearchTextField()
-  let cityTabListView = CityTabListView()
+  
   let cityCountView = CityCountView()
   
   let emptyView = EmptyView()
-  
-  var viewAll: [City] = [] // 전체보기
-  var culturalheritage: [City] = [] // 고궁 · 문화유산
-  var park: [City] = [] // 공원
-  var tourismSpecialZone: [City] = [] // 관광특구
-  var centralBusinessDistrict: [City] = [] // 발달상권
-  var denselyPopulatedArea: [City] = [] // 인구밀집지역
   
   let collectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
@@ -55,8 +41,7 @@ class MainController: UIViewController {
     emptyView.isHidden = true
     self.citySearchTextField.textField.isEnabled = false
     configureTFDelegate()
-    cityTabListView.delegate = self
-
+    
     // API fetch begins
     api = RestProcessor()
     api.reqeustDelegate = self
@@ -85,20 +70,16 @@ class MainController: UIViewController {
   }
   
   private func addViews() {
-    view.addSubview(topLogoImageView)
-    view.addSubview(leftLogoImageView)
+    view.addSubview(logoImageView)
     view.addSubview(citySearchTextField)
-    view.addSubview(cityTabListView)
     view.addSubview(cityCountView)
     view.addSubview(collectionView)
     view.addSubview(emptyView)
   }
   
   private func setConstraints() {
-    topLogoImageViewConstraints()
-    leftLogoImageViewConstraints()
+    logoImageViewConstraints()
     citySearchTextFieldConstraints()
-    cityTabListViewConstraints()
     cityCountViewConstraints()
     collectionViewConstraints()
     emptyViewConstraints()
@@ -157,41 +138,25 @@ class MainController: UIViewController {
     }
   }
   
-  private func topLogoImageViewConstraints() {
-    topLogoImageView.translatesAutoresizingMaskIntoConstraints = false
-    
-    topLogoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 51).isActive = true
-    topLogoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 83).isActive = true
-    topLogoImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -187).isActive = true
-  }
-  
-  private func leftLogoImageViewConstraints() {
-    leftLogoImageView.translatesAutoresizingMaskIntoConstraints = false
-    leftLogoImageView.topAnchor.constraint(equalTo: topLogoImageView.bottomAnchor, constant: 5).isActive = true
-    leftLogoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
-    leftLogoImageView.trailingAnchor.constraint(equalTo: citySearchTextField.leadingAnchor,constant: -5).isActive = true
+  private func logoImageViewConstraints() {
+    logoImageView.translatesAutoresizingMaskIntoConstraints = false
+    logoImageView.heightAnchor.constraint(equalToConstant: 81).isActive = true
+    logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
+    logoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
+    logoImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -112).isActive = true
   }
   
   private func citySearchTextFieldConstraints() {
     citySearchTextField.translatesAutoresizingMaskIntoConstraints = false
-    citySearchTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
-    citySearchTextField.topAnchor.constraint(equalTo: leftLogoImageView.topAnchor).isActive = true
-    citySearchTextField.bottomAnchor.constraint(equalTo: leftLogoImageView.bottomAnchor).isActive = true
+    citySearchTextField.heightAnchor.constraint(equalToConstant: 55).isActive = true
+    citySearchTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 25).isActive = true
+    citySearchTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
     citySearchTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
-  }
-  
-  private func cityTabListViewConstraints() {
-    cityTabListView.translatesAutoresizingMaskIntoConstraints = false
-    cityTabListView.backgroundColor = .black
-    cityTabListView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-    cityTabListView.topAnchor.constraint(equalTo: citySearchTextField.bottomAnchor, constant: 20).isActive = true
-    cityTabListView.bottomAnchor.constraint(equalTo: cityCountView.topAnchor, constant:  -25).isActive = true
-    cityTabListView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
-    cityTabListView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
   }
   
   private func cityCountViewConstraints() {
     cityCountView.translatesAutoresizingMaskIntoConstraints = false
+    cityCountView.topAnchor.constraint(equalTo: citySearchTextField.bottomAnchor, constant: 32).isActive = true
     cityCountView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
   }
   
@@ -210,23 +175,6 @@ class MainController: UIViewController {
 
 //    emptyView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 121).isActive = true
 //    emptyView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -121).isActive = true
-  }
-  
-  private func categorizeCities() {
-    viewAll = self.seoulCities.getCity()!
-    for data in self.seoulCities.getCity()! {
-      if data.Category == "고궁·문화유산" {
-        culturalheritage.append(data)
-      } else if data.Category == "공원" {
-        park.append(data)
-      } else if data.Category == "관광특구" {
-        tourismSpecialZone.append(data)
-      } else if data.Category == "발달상권" {
-        centralBusinessDistrict.append(data)
-      } else if data.Category == "인구밀집지역" {
-        denselyPopulatedArea.append(data)
-      }
-    }
   }
   
 }
@@ -321,7 +269,7 @@ extension MainController: UICollectionViewDelegateFlowLayout {
 }
 
 extension MainController: RestProcessorRequestDelegate {
-
+  
   func didReceiveResponseFromDataTask(
     _ result: RestProcessor.Results,
     _ usage: EndPoint
@@ -333,19 +281,16 @@ extension MainController: RestProcessorRequestDelegate {
         if let data = data,
            let citiesData = try? JSONDecoder().decode([Cities].self, from: data) {
           self.seoulCities = SeoulCities(citiesData)
-          guard let tot = self.seoulCities.cities[0].cities?.count else { return }
           
-          categorizeCities()
+          guard let tot = self.seoulCities.cities[0].cities?.count else { return }
           
           DispatchQueue.main.async {
             self.cityCountView.cityCntLabel.text = String(tot)
             self.collectionView.reloadData()
             self.collectionView.hideSkeleton()
             self.citySearchTextField.textField.isEnabled = true
-            self.cityTabListView.enableAllTabButtons()
           }
         }
-        
       default:
         break
       }
@@ -385,37 +330,5 @@ extension MainController: UITextFieldDelegate {
     getCitiesSearchAPI()
     textField.resignFirstResponder()
     return true
-  }
-}
-
-extension MainController: CityTabListViewDelegate {
-  func updateCollectionView(for cities: [City]) {
-      DispatchQueue.main.async {
-          self.cityCountView.cityCntLabel.text = String(cities.count)
-          self.seoulCities.setCity(city: cities)
-          self.collectionView.reloadData()
-      }
-  }
-
-  func didSelectTab(_ tab: CityTab) {
-    switch tab {
-    case .viewAll:
-      updateCollectionView(for: self.viewAll)
-      break
-    case .culturalheritage:
-      updateCollectionView(for: self.culturalheritage)
-      break
-    case .park:
-      updateCollectionView(for: self.park)
-      break
-    case .specialTouristZone:
-      updateCollectionView(for: self.tourismSpecialZone)
-      break
-    case .centralBusinessDistrict:
-      updateCollectionView(for: self.centralBusinessDistrict)
-      break
-    case .denselyPopulatedArea:
-      updateCollectionView(for: self.denselyPopulatedArea)
-    }
   }
 }

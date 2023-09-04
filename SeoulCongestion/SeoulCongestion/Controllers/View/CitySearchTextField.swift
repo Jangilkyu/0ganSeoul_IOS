@@ -49,16 +49,13 @@ class CitySearchTextField: UIView {
   }()
   
   let searchButton: UIButton = {
-      let btn = UIButton()
-      let originalImage = UIImage(named: "search")
-      let resizedImage = originalImage?.resized(to: CGSize(width: 20, height: 20))
-      btn.setImage(resizedImage, for: .normal)
-      btn.imageView?.contentMode = .scaleAspectFit
-      btn.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 15)
-      btn.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-      return btn
-  }()
+    let btn = UIButton()
+    btn.setImage(UIImage(named: "search"), for: .normal)
+    btn.imageView?.contentMode = .scaleAspectFit
+    btn.contentEdgeInsets = UIEdgeInsets(top: 11, left: 0, bottom: 11, right: 15)
 
+    return btn
+  }()
   
   func playLottie(
     _ animation: LottieAnimation?,
@@ -83,7 +80,6 @@ class CitySearchTextField: UIView {
     configureLottie()
     textField.rightView = searchButton
     textField.rightViewMode = .always
-    textField.layer.cornerRadius = 3
   }
   
   required init?(coder: NSCoder) {
@@ -110,6 +106,6 @@ class CitySearchTextField: UIView {
     textField.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     textField.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
     textField.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-    
+    textField.rightView?.widthAnchor.constraint(equalToConstant: 50).isActive = true
   }
 }
