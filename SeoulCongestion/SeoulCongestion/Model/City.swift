@@ -12,14 +12,12 @@ struct City: Codable {
   let LIVE_PPLTN_STTS: LIVE_PPLTN_STTS?
   let AVG_ROAD_DATA: AVG_ROAD_DATA?
   let SBIKE_STTS: [SBIKE_STTS]?
-  let Category: String?
 
   enum CodingKeys: String, CodingKey {
     case areaNM = "AREA_NM"
     case LIVE_PPLTN_STTS
     case AVG_ROAD_DATA
     case SBIKE_STTS
-    case Category = "Category"
   }
 }
 
