@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "Group 427323334.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -9,7 +10,6 @@
       "scale" : "2x"
     },
     {
-      "filename" : "search_27x27.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
