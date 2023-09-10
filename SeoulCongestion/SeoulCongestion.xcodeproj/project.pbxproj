@@ -60,6 +60,8 @@
 		FE9121802A920D5E00C08B45 /* CityTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE91217F2A920D5E00C08B45 /* CityTab.swift */; };
 		FE9121822A9256CE00C08B45 /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9121812A9256CE00C08B45 /* Extension+UIImage.swift */; };
 		FEA773AC29CB43C30095B8FE /* RatioLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA773AB29CB43C30095B8FE /* RatioLabelView.swift */; };
+		FEDAD7922AA95F440057A99F /* DropDown in Frameworks */ = {isa = PBXBuildFile; productRef = FEDAD7912AA95F440057A99F /* DropDown */; };
+		FEDAD7942AA962F20057A99F /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDAD7932AA962F20057A99F /* DropDownView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +118,7 @@
 		FE91217F2A920D5E00C08B45 /* CityTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTab.swift; sourceTree = "<group>"; };
 		FE9121812A9256CE00C08B45 /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
 		FEA773AB29CB43C30095B8FE /* RatioLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatioLabelView.swift; sourceTree = "<group>"; };
+		FEDAD7932AA962F20057A99F /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE06CBFE29BDE11C003297E9 /* SkeletonView in Frameworks */,
+				FEDAD7922AA95F440057A99F /* DropDown in Frameworks */,
 				FE06CBF829BDDBE3003297E9 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +249,7 @@
 				FE06CBCF29BDDABF003297E9 /* CityCountView.swift */,
 				FE06CBD029BDDABF003297E9 /* CitySearchTextField.swift */,
 				FE120C2C2A91D2B10074C1B4 /* CityTabListView.swift */,
+				FEDAD7932AA962F20057A99F /* DropDownView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 			packageProductDependencies = (
 				FE06CBF729BDDBE3003297E9 /* Lottie */,
 				FE06CBFD29BDE11C003297E9 /* SkeletonView */,
+				FEDAD7912AA95F440057A99F /* DropDown */,
 			);
 			productName = SeoulCongestion;
 			productReference = FE74021A29814B510014629A /* SeoulCongestion.app */;
@@ -377,6 +383,7 @@
 			packageReferences = (
 				FE06CBF629BDDBE3003297E9 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				FE06CBFC29BDE11C003297E9 /* XCRemoteSwiftPackageReference "SkeletonView" */,
+				FEDAD7902AA95F440057A99F /* XCRemoteSwiftPackageReference "DropDown" */,
 			);
 			productRefGroup = FE74021B29814B510014629A /* Products */;
 			projectDirPath = "";
@@ -435,6 +442,7 @@
 				FEA773AC29CB43C30095B8FE /* RatioLabelView.swift in Sources */,
 				FE120C2D2A91D2B10074C1B4 /* CityTabListView.swift in Sources */,
 				FE06CB8929BDD698003297E9 /* ResHandler.swift in Sources */,
+				FEDAD7942AA962F20057A99F /* DropDownView.swift in Sources */,
 				FE06CBD429BDDABF003297E9 /* RoadCongestionCell.swift in Sources */,
 				FE06CBEE29BDDAE7003297E9 /* Extension+String.swift in Sources */,
 				FE06CBD729BDDABF003297E9 /* BikeAverageUtilizationRateView.swift in Sources */,
@@ -686,6 +694,14 @@
 				minimumVersion = 1.7.0;
 			};
 		};
+		FEDAD7902AA95F440057A99F /* XCRemoteSwiftPackageReference "DropDown" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AssistoLab/DropDown";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -698,6 +714,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FE06CBFC29BDE11C003297E9 /* XCRemoteSwiftPackageReference "SkeletonView" */;
 			productName = SkeletonView;
+		};
+		FEDAD7912AA95F440057A99F /* DropDown */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FEDAD7902AA95F440057A99F /* XCRemoteSwiftPackageReference "DropDown" */;
+			productName = DropDown;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
