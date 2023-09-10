@@ -8,6 +8,7 @@
 import UIKit
 import SkeletonView
 import Lottie
+import DropDown
 
 class MainController: UIViewController {
   fileprivate let mainCellId = "mainCellId"
@@ -26,12 +27,14 @@ class MainController: UIViewController {
     imageView.contentMode = .scaleAspectFit
     return imageView
   }()
-    
+  
   let citySearchTextField = CitySearchTextField()
   let cityTabListView = CityTabListView()
   let cityCountView = CityCountView()
   
   let emptyView = EmptyView()
+  
+  let dropDownView = DropDownView()
   
   var viewAll: [City] = [] // 전체보기
   var culturalheritage: [City] = [] // 고궁 · 문화유산
@@ -56,7 +59,7 @@ class MainController: UIViewController {
     self.citySearchTextField.textField.isEnabled = false
     configureTFDelegate()
     cityTabListView.delegate = self
-
+    dropDownView.mainController = self
     // API fetch begins
     api = RestProcessor()
     api.reqeustDelegate = self
@@ -70,6 +73,7 @@ class MainController: UIViewController {
     configureCollectionView()
     configureSkeletonView()
     configureSearchButton()
+    dropDownView.setupTapGestureRecognizer()
   }
   
   private func getCitiesAPIInfo() {
@@ -92,6 +96,7 @@ class MainController: UIViewController {
     view.addSubview(cityCountView)
     view.addSubview(collectionView)
     view.addSubview(emptyView)
+    view.addSubview(dropDownView)
   }
   
   private func setConstraints() {
@@ -102,6 +107,7 @@ class MainController: UIViewController {
     cityCountViewConstraints()
     collectionViewConstraints()
     emptyViewConstraints()
+    dropDownViewConstraints()
   }
   
   private func configureCollectionView() {
@@ -207,9 +213,17 @@ class MainController: UIViewController {
     emptyView.translatesAutoresizingMaskIntoConstraints = false
     emptyView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 150).isActive =  true
     emptyView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-
-//    emptyView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 121).isActive = true
-//    emptyView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -121).isActive = true
+    //    emptyView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 121).isActive = true
+    //    emptyView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -121).isActive = true
+  }
+  
+  
+  private func dropDownViewConstraints() {
+    dropDownView.translatesAutoresizingMaskIntoConstraints = false
+    dropDownView.heightAnchor.constraint(equalToConstant: 30).isActive = true
+    dropDownView.topAnchor.constraint(equalTo: cityTabListView.bottomAnchor, constant: 25).isActive = true
+    dropDownView.widthAnchor.constraint(equalToConstant: 150).isActive = true
+    dropDownView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
   }
   
   private func categorizeCities() {
@@ -321,7 +335,7 @@ extension MainController: UICollectionViewDelegateFlowLayout {
 }
 
 extension MainController: RestProcessorRequestDelegate {
-
+  
   func didReceiveResponseFromDataTask(
     _ result: RestProcessor.Results,
     _ usage: EndPoint
@@ -389,14 +403,15 @@ extension MainController: UITextFieldDelegate {
 }
 
 extension MainController: CityTabListViewDelegate {
-  func updateCollectionView(for cities: [City]) {
-      DispatchQueue.main.async {
-          self.cityCountView.cityCntLabel.text = String(cities.count)
-          self.seoulCities.setCity(city: cities)
-          self.collectionView.reloadData()
-      }
+  func updateCollectionView(
+    for cities: [City]
+  ) {
+    self.updateCollectionViewWithSelectedString(
+      dropDownView.label.text ?? "",
+      cities
+    )
   }
-
+  
   func didSelectTab(_ tab: CityTab) {
     switch tab {
     case .viewAll:
@@ -416,6 +431,37 @@ extension MainController: CityTabListViewDelegate {
       break
     case .denselyPopulatedArea:
       updateCollectionView(for: self.denselyPopulatedArea)
+    }
+  }
+}
+
+extension MainController {
+  
+  func sortCitiesByAlphabet(
+    _ cities: [City]) -> [City] {
+    return cities.sorted { city1, city2 in
+      if let city1 = city1.areaNM, let city2 = city2.areaNM {
+        return city1.localizedCompare(city2) == .orderedAscending
+      }
+      return false
+    }
+  }
+  
+  func updateCollectionViewWithSelectedString(
+    _ selectedString: String,
+    _ cities: [City]? = nil
+  ) {
+    let citiesToUse: [City] = cities ?? seoulCities.getCity()!
+
+    if selectedString == "가나다 순" {
+      let alphabeticalSorted = self.sortCitiesByAlphabet(citiesToUse)
+      seoulCities.setCity(city: alphabeticalSorted)
+      DispatchQueue.main.async {
+        self.cityCountView.cityCntLabel.text = String(alphabeticalSorted.count)
+        self.collectionView.reloadData()
+      }
+    } else if selectedString == "인구 혼잡도 순" {
+      print("인구 혼잡도 순")
     }
   }
 }
