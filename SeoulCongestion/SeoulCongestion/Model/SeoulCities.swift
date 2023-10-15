@@ -22,13 +22,15 @@ class SeoulCities {
     self.cities[0].cities = city
   }
   
-  func getNumberOfCities() -> Int {
-    if cities.count > 0 {
-      let numberOfCities = cities[0].cities!.count
-      return numberOfCities
+    func getNumberOfCities() -> Int {
+      if cities.count > 0 {
+          guard let cityCount = cities[0].cities?.count else { return 0 }
+          let numberOfCities = cityCount
+          return numberOfCities
+      }
+      return 0
     }
-    return 0
-  }
+
   
   func getOneCenter(at indexPath: IndexPath) -> City? {
       guard let cities = self.getCity(), indexPath.row < cities.count else {

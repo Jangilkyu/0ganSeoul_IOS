@@ -62,6 +62,9 @@
 		FEA773AC29CB43C30095B8FE /* RatioLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA773AB29CB43C30095B8FE /* RatioLabelView.swift */; };
 		FEDAD7922AA95F440057A99F /* DropDown in Frameworks */ = {isa = PBXBuildFile; productRef = FEDAD7912AA95F440057A99F /* DropDown */; };
 		FEDAD7942AA962F20057A99F /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDAD7932AA962F20057A99F /* DropDownView.swift */; };
+		FEDF7DF52ADC0EBB00B8F223 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FEDF7DF42ADC0EBB00B8F223 /* SnapKit */; };
+		FEDF7DF72ADC0EBB00B8F223 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = FEDF7DF62ADC0EBB00B8F223 /* SnapKit-Dynamic */; };
+		FEDF7DFB2ADC0EFE00B8F223 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDF7DFA2ADC0EFE00B8F223 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +122,7 @@
 		FE9121812A9256CE00C08B45 /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
 		FEA773AB29CB43C30095B8FE /* RatioLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatioLabelView.swift; sourceTree = "<group>"; };
 		FEDAD7932AA962F20057A99F /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
+		FEDF7DFA2ADC0EFE00B8F223 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +130,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEDF7DF72ADC0EBB00B8F223 /* SnapKit-Dynamic in Frameworks */,
 				FE06CBFE29BDE11C003297E9 /* SkeletonView in Frameworks */,
+				FEDF7DF52ADC0EBB00B8F223 /* SnapKit in Frameworks */,
 				FEDAD7922AA95F440057A99F /* DropDown in Frameworks */,
 				FE06CBF829BDDBE3003297E9 /* Lottie in Frameworks */,
 			);
@@ -177,9 +183,7 @@
 				FE06CBBA29BDDABF003297E9 /* DetailCell */,
 				FE06CBBE29BDDABF003297E9 /* DetailView */,
 				FE06CBC029BDDABF003297E9 /* Bike */,
-				FE06CBC729BDDABF003297E9 /* MainController.swift */,
 				FE06CBC829BDDABF003297E9 /* CityDetailController.swift */,
-				FE06CBC929BDDABF003297E9 /* Cell */,
 				FE06CBCB29BDDABF003297E9 /* View */,
 				FE06CBD129BDDABF003297E9 /* MainNavigationController.swift */,
 			);
@@ -308,6 +312,7 @@
 		FE74021C29814B510014629A /* SeoulCongestion */ = {
 			isa = PBXGroup;
 			children = (
+				FEDF7DF82ADC0ED700B8F223 /* Main */,
 				FE1EF14229BE087A00FF7113 /* Model */,
 				FE06CBE329BDDAE7003297E9 /* Util */,
 				FE06CBB929BDDABF003297E9 /* Controllers */,
@@ -331,6 +336,24 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		FEDF7DF82ADC0ED700B8F223 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CBC929BDDABF003297E9 /* Cell */,
+				FEDF7DF92ADC0EFE00B8F223 /* ViewModel */,
+				FE06CBC729BDDABF003297E9 /* MainController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FEDF7DF92ADC0EFE00B8F223 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FEDF7DFA2ADC0EFE00B8F223 /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -351,6 +374,8 @@
 				FE06CBF729BDDBE3003297E9 /* Lottie */,
 				FE06CBFD29BDE11C003297E9 /* SkeletonView */,
 				FEDAD7912AA95F440057A99F /* DropDown */,
+				FEDF7DF42ADC0EBB00B8F223 /* SnapKit */,
+				FEDF7DF62ADC0EBB00B8F223 /* SnapKit-Dynamic */,
 			);
 			productName = SeoulCongestion;
 			productReference = FE74021A29814B510014629A /* SeoulCongestion.app */;
@@ -384,6 +409,7 @@
 				FE06CBF629BDDBE3003297E9 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				FE06CBFC29BDE11C003297E9 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 				FEDAD7902AA95F440057A99F /* XCRemoteSwiftPackageReference "DropDown" */,
+				FEDF7DF32ADC0EBB00B8F223 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = FE74021B29814B510014629A /* Products */;
 			projectDirPath = "";
@@ -460,6 +486,7 @@
 				FE06CB8829BDD698003297E9 /* RestProcessor+Model.swift in Sources */,
 				FE06CBD929BDDABF003297E9 /* BikeInfoController.swift in Sources */,
 				FE1EF14729BE087A00FF7113 /* City.swift in Sources */,
+				FEDF7DFB2ADC0EFE00B8F223 /* MainViewModel.swift in Sources */,
 				FE06CBEC29BDDAE7003297E9 /* SCColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -702,6 +729,14 @@
 				kind = branch;
 			};
 		};
+		FEDF7DF32ADC0EBB00B8F223 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -719,6 +754,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FEDAD7902AA95F440057A99F /* XCRemoteSwiftPackageReference "DropDown" */;
 			productName = DropDown;
+		};
+		FEDF7DF42ADC0EBB00B8F223 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FEDF7DF32ADC0EBB00B8F223 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		FEDF7DF62ADC0EBB00B8F223 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FEDF7DF32ADC0EBB00B8F223 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
