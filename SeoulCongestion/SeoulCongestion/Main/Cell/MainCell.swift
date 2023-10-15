@@ -9,7 +9,7 @@ import UIKit
 import SkeletonView
 
 class MainCell: UICollectionViewCell {
-  
+  static let identifier = "mainCellId"
   var city: City? {
     didSet {
       guard let city = self.city else { return print("city가 없습니다.")}

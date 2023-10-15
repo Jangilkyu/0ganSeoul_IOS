@@ -83,6 +83,7 @@ class CityTabListView: UIView {
   }
   
   private func setup() {
+      backgroundColor = .black
     addViews()
     setConstraints()
     
