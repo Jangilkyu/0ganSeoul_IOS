@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class BikeInfoController: UIViewController {
   var sbike: [SBIKE_STTS]!
@@ -40,10 +41,11 @@ class BikeInfoController: UIViewController {
   }()
   
   override func viewDidLoad() {
-    super.viewDidLoad()
-    view.backgroundColor = SCColor.black.color
-    setup()
-    backButton()
+      super.viewDidLoad()
+      view.backgroundColor = SCColor.black.color
+      setUI()
+      backButton()
+      configureCollectionView()
   }
   
   convenience init(_ bike: [SBIKE_STTS]? = nil, _ city: String? = nil) {
@@ -71,13 +73,45 @@ class BikeInfoController: UIViewController {
     
     bikeAverageUtilizationRateView.utilizationRateLabel.text = "\(bikeAvg)%"
   }
-  
-  private func setup() {
-    addViews()
-    setConstraints()
-    configureCollectionView()
-  }
-  
+    
+    private func setUI() {
+        [bikeImageView, bikeMainTitle, availableBikeCountView, bikeAverageUtilizationRateView, collectionView].forEach{ view.addSubview($0) }
+        
+        bikeImageView.snp.makeConstraints { make in
+            make.height.equalTo(70)
+            make.width.equalTo(bikeImageView.snp.height)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(10)
+            make.trailing.equalToSuperview().offset(-40)
+        }
+        
+        bikeMainTitle.snp.makeConstraints { make in
+            make.top.equalTo(bikeImageView.snp.bottom)
+            make.leading.equalToSuperview().offset(40)
+            make.trailing.equalToSuperview().offset(-91)
+        }
+        
+        availableBikeCountView.snp.makeConstraints { make in
+            make.height.equalTo(30)
+            make.top.equalTo(bikeMainTitle.snp.bottom).offset(15)
+            make.leading.equalToSuperview().offset(40)
+            make.trailing.equalToSuperview().offset(-40)
+        } 
+        
+        bikeAverageUtilizationRateView.snp.makeConstraints { make in
+            make.height.equalTo(30)
+            make.top.equalTo(availableBikeCountView.snp.bottom).offset(12)
+            make.leading.equalToSuperview().offset(40)
+            make.trailing.equalToSuperview().offset(-40)
+        } 
+        
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(bikeAverageUtilizationRateView.snp.bottom).offset(15)
+            make.leading.equalToSuperview().offset(40)
+            make.trailing.equalToSuperview().offset(-40)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        }
+    }
+
   func backButton() {
     let backButton = UIButton(type: .custom)
     backButton.setImage(UIImage(named: "backPolygon"), for: .normal)
@@ -103,22 +137,6 @@ class BikeInfoController: UIViewController {
     navigationController?.popViewController(animated: true)
   }
   
-  private func addViews() {
-    view.addSubview(bikeImageView)
-    view.addSubview(bikeMainTitle)
-    view.addSubview(availableBikeCountView)
-    view.addSubview(bikeAverageUtilizationRateView)
-    view.addSubview(collectionView)
-  }
-  
-  private func setConstraints() {
-    bikeImageViewConstraints()
-    bikeMainTitleConstraints()
-    bikeAvailabilityRateViewConstraints()
-    bikeAverageUtilizationRateViewConstraints()
-    collectionViewConstraints()
-  }
-  
   private func configureCollectionView() {
     collectionView.delegate = self
     collectionView.dataSource = self
@@ -134,46 +152,6 @@ class BikeInfoController: UIViewController {
       if yOffset < 0 {
           scrollView.contentOffset = CGPoint(x: 0, y: 0)
       }
-  }
-
-  
-  private func bikeImageViewConstraints() {
-    bikeImageView.translatesAutoresizingMaskIntoConstraints = false
-    bikeImageView.heightAnchor.constraint(equalToConstant: 70).isActive = true
-    bikeImageView.widthAnchor.constraint(equalTo: bikeImageView.heightAnchor).isActive = true
-    bikeImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
-    bikeImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
-  }
-  
-  private func bikeMainTitleConstraints() {
-    bikeMainTitle.translatesAutoresizingMaskIntoConstraints = false
-    bikeMainTitle.topAnchor.constraint(equalTo: bikeImageView.bottomAnchor).isActive = true
-    bikeMainTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
-    bikeMainTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -91).isActive = true
-  }
-  
-  private func bikeAvailabilityRateViewConstraints() {
-    availableBikeCountView.translatesAutoresizingMaskIntoConstraints = false
-    availableBikeCountView.heightAnchor.constraint(equalToConstant: 30).isActive = true
-    availableBikeCountView.topAnchor.constraint(equalTo: bikeMainTitle.bottomAnchor, constant: 15).isActive = true
-    availableBikeCountView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
-    availableBikeCountView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
-  }
-  
-  private func bikeAverageUtilizationRateViewConstraints() {
-    bikeAverageUtilizationRateView.translatesAutoresizingMaskIntoConstraints = false
-    bikeAverageUtilizationRateView.heightAnchor.constraint(equalToConstant: 30).isActive = true
-    bikeAverageUtilizationRateView.topAnchor.constraint(equalTo: availableBikeCountView.bottomAnchor, constant: 12).isActive = true
-    bikeAverageUtilizationRateView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
-    bikeAverageUtilizationRateView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
-  }
-  
-  private func collectionViewConstraints() {
-    collectionView.translatesAutoresizingMaskIntoConstraints = false
-    collectionView.topAnchor.constraint(equalTo: bikeAverageUtilizationRateView.bottomAnchor, constant: 15).isActive = true
-    collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
-    collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
-    collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
   }
 }
 

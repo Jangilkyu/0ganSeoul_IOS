@@ -6,12 +6,9 @@
 //
 
 import UIKit
+import SnapKit
 
 class CityDetailController: UIViewController {
-  
-  fileprivate let populationCongestionCell = "populationCongestionCell"
-  fileprivate let roadCongestionCell = "roadCongestionCell"
-  fileprivate let publicBikeCell = "publicBikeCell"
   
   var livePpltnStts: LIVE_PPLTN_STTS!
   var avgRoadData: AVG_ROAD_DATA!
@@ -95,23 +92,14 @@ class CityDetailController: UIViewController {
   }
   
   private func setup() {
-    addViews()
+      setUI()
     setConstraints()
     configureCollectionView()
+      
   }
-  
-  private func addViews() {
-    view.addSubview(quotationcomImageView)
-    view.addSubview(mainTitleLabel)
-    view.addSubview(subTitleLabel)
-    view.addSubview(standardTimeView)
-    view.addSubview(collectionView)
-  }
-  
+
   private func setConstraints() {
-    mainTitleLabelConstraints()
-    quotationcomImageViewConstraints()
-    subTitleLabelConstraints()
+//    subTitleLabelConstraints()
     standardTimeViewConstraints()
     collectionViewConstraints()
   }
@@ -123,41 +111,42 @@ class CityDetailController: UIViewController {
     // MARK: 인구 혼잡도
     collectionView.register(
       PopulationCongestionCell.self,
-      forCellWithReuseIdentifier: populationCongestionCell
+      forCellWithReuseIdentifier: PopulationCongestionCell.identifier
     )
     
     // MARK: 차량 혼잡도
     collectionView.register(
       RoadCongestionCell.self,
-      forCellWithReuseIdentifier: roadCongestionCell)
+      forCellWithReuseIdentifier: RoadCongestionCell.identifier)
     
     // MARK: 따릉이
     collectionView.register(
       PublicBikeCell.self,
-      forCellWithReuseIdentifier: publicBikeCell
+      forCellWithReuseIdentifier: PublicBikeCell.identifier
     )
   }
-  
-  private func quotationcomImageViewConstraints() {
-    quotationcomImageView.translatesAutoresizingMaskIntoConstraints = false
-    quotationcomImageView.widthAnchor.constraint(equalToConstant: 38).isActive = true
-    quotationcomImageView.heightAnchor.constraint(equalToConstant: 66).isActive = true
-    quotationcomImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-    quotationcomImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
-  }
-  
-  private func mainTitleLabelConstraints() {
-    mainTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-    mainTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 77).isActive = true
-    mainTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
-    mainTitleLabel.trailingAnchor.constraint(equalTo: quotationcomImageView.leadingAnchor).isActive = true
-  }
-  
-  private func subTitleLabelConstraints() {
-    subTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-    subTitleLabel.topAnchor.constraint(equalTo: mainTitleLabel.bottomAnchor, constant: 26).isActive = true
-    subTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
-  }
+    
+    func setUI() {
+        [quotationcomImageView, mainTitleLabel, subTitleLabel, standardTimeView, collectionView].forEach { view.addSubview($0)}
+        
+        quotationcomImageView.snp.makeConstraints { make in
+            make.width.equalTo(38)
+            make.height.equalTo(66)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.trailing.equalToSuperview().offset(-40)
+        }
+        
+        mainTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(quotationcomImageView.snp.bottom)
+            make.leading.equalToSuperview().offset(40)
+            make.trailing.equalTo(quotationcomImageView.snp.leading)
+        }
+        
+        subTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(mainTitleLabel.snp.bottom).offset(26)
+            make.leading.equalToSuperview().offset(40)
+        }
+    }
   
   private func standardTimeViewConstraints() {
     standardTimeView.translatesAutoresizingMaskIntoConstraints = false
@@ -200,26 +189,26 @@ extension CityDetailController: UICollectionViewDataSource {
     switch indexPath.item {
     case 0:
       guard let populationCongestionCell = collectionView.dequeueReusableCell(
-        withReuseIdentifier: populationCongestionCell,
+        withReuseIdentifier: PopulationCongestionCell.identifier,
         for: indexPath) as? PopulationCongestionCell else { return UICollectionViewCell() }
       populationCongestionCell.population = livePpltnStts
       cell = populationCongestionCell
     case 1:
       guard let roadCongestionCell = collectionView.dequeueReusableCell(
-        withReuseIdentifier: roadCongestionCell,
+        withReuseIdentifier: RoadCongestionCell.identifier,
         for: indexPath) as? RoadCongestionCell else { return UICollectionViewCell() }
       roadCongestionCell.road = avgRoadData
       cell = roadCongestionCell
     case 2:
       guard let publicBikeCell = collectionView.dequeueReusableCell(
-        withReuseIdentifier: publicBikeCell,
+        withReuseIdentifier: PublicBikeCell.identifier,
         for: indexPath) as? PublicBikeCell else { return UICollectionViewCell()}
       publicBikeCell.bike = sbikeStts
       publicBikeCell.city = self.cityNm
       cell = publicBikeCell
     default:
       cell = collectionView.dequeueReusableCell(
-        withReuseIdentifier: populationCongestionCell,
+        withReuseIdentifier: PopulationCongestionCell.identifier,
         for: indexPath)
     }
     return cell

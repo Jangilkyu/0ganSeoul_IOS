@@ -177,42 +177,9 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		FE06CBB929BDDABF003297E9 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				FE06CBBA29BDDABF003297E9 /* DetailCell */,
-				FE06CBBE29BDDABF003297E9 /* DetailView */,
-				FE06CBC029BDDABF003297E9 /* Bike */,
-				FE06CBC829BDDABF003297E9 /* CityDetailController.swift */,
-				FE06CBCB29BDDABF003297E9 /* View */,
-				FE06CBD129BDDABF003297E9 /* MainNavigationController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		FE06CBBA29BDDABF003297E9 /* DetailCell */ = {
-			isa = PBXGroup;
-			children = (
-				FE06CBBB29BDDABF003297E9 /* PopulationCongestionCell.swift */,
-				FE06CBBC29BDDABF003297E9 /* PublicBikeCell.swift */,
-				FE06CBBD29BDDABF003297E9 /* RoadCongestionCell.swift */,
-			);
-			path = DetailCell;
-			sourceTree = "<group>";
-		};
-		FE06CBBE29BDDABF003297E9 /* DetailView */ = {
-			isa = PBXGroup;
-			children = (
-				FE06CBBF29BDDABF003297E9 /* StandardTimeView.swift */,
-				FEA773AB29CB43C30095B8FE /* RatioLabelView.swift */,
-			);
-			path = DetailView;
-			sourceTree = "<group>";
-		};
 		FE06CBC029BDDABF003297E9 /* Bike */ = {
 			isa = PBXGroup;
 			children = (
-				FE06CBC129BDDABF003297E9 /* Cell */,
 				FE06CBC329BDDABF003297E9 /* View */,
 				FE06CBC629BDDABF003297E9 /* BikeInfoController.swift */,
 			);
@@ -230,8 +197,8 @@
 		FE06CBC329BDDABF003297E9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FE06CBC429BDDABF003297E9 /* BikeAverageUtilizationRateView.swift */,
-				FE06CBC529BDDABF003297E9 /* AvailableBikeCountView.swift */,
+				FEDF9E992AED651A0081BEEC /* CustomView */,
+				FE06CBC129BDDABF003297E9 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -242,20 +209,6 @@
 				FE06CBCA29BDDABF003297E9 /* MainCell.swift */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		FE06CBCB29BDDABF003297E9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				FE06CBCC29BDDABF003297E9 /* RoadTrafficView.swift */,
-				FE06CBCD29BDDABF003297E9 /* EmptyView.swift */,
-				FE06CBCE29BDDABF003297E9 /* AreaCongestLvlView.swift */,
-				FE06CBCF29BDDABF003297E9 /* CityCountView.swift */,
-				FE06CBD029BDDABF003297E9 /* CitySearchTextField.swift */,
-				FE120C2C2A91D2B10074C1B4 /* CityTabListView.swift */,
-				FEDAD7932AA962F20057A99F /* DropDownView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		FE06CBE329BDDAE7003297E9 /* Util */ = {
@@ -293,6 +246,43 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		FE63DE222AECF3C800E73411 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				FE74021D29814B510014629A /* AppDelegate.swift */,
+				FE74021F29814B510014629A /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		FE63DE232AECF4BE00E73411 /* CityDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FE63DE242AECF4D500E73411 /* View */,
+				FE06CBC829BDDABF003297E9 /* CityDetailController.swift */,
+			);
+			path = CityDetail;
+			sourceTree = "<group>";
+		};
+		FE63DE242AECF4D500E73411 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FEDF9E982AED63450081BEEC /* CustomView */,
+				FE63DE252AECF50B00E73411 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FE63DE252AECF50B00E73411 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CBBB29BDDABF003297E9 /* PopulationCongestionCell.swift */,
+				FE06CBBC29BDDABF003297E9 /* PublicBikeCell.swift */,
+				FE06CBBD29BDDABF003297E9 /* RoadCongestionCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		FE74021129814B510014629A = {
 			isa = PBXGroup;
 			children = (
@@ -312,20 +302,27 @@
 		FE74021C29814B510014629A /* SeoulCongestion */ = {
 			isa = PBXGroup;
 			children = (
-				FEDF7DF82ADC0ED700B8F223 /* Main */,
+				FE74022629814B520014629A /* Assets.xcassets */,
+				FE74022B29814B520014629A /* Info.plist */,
+				FEDF9E962AED5FF20081BEEC /* Resources */,
+				FEDF9E952AED5FBE0081BEEC /* Presentation */,
 				FE1EF14229BE087A00FF7113 /* Model */,
 				FE06CBE329BDDAE7003297E9 /* Util */,
-				FE06CBB929BDDABF003297E9 /* Controllers */,
 				FE06CB8B29BDD6CC003297E9 /* Fonts */,
 				FE06CB4029BDD686003297E9 /* lottie */,
 				FE06CB8229BDD698003297E9 /* API */,
-				FE74021D29814B510014629A /* AppDelegate.swift */,
-				FE74021F29814B510014629A /* SceneDelegate.swift */,
-				FE74022629814B520014629A /* Assets.xcassets */,
-				FE74022829814B520014629A /* LaunchScreen.storyboard */,
-				FE74022B29814B520014629A /* Info.plist */,
+				FE63DE222AECF3C800E73411 /* Application */,
 			);
 			path = SeoulCongestion;
+			sourceTree = "<group>";
+		};
+		FE8075232AEAB30800181CEA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FEDF9E972AED62D20081BEEC /* CustomView */,
+				FE06CBC929BDDABF003297E9 /* Cell */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		FE91217E2A920D2400C08B45 /* Constants */ = {
@@ -339,8 +336,8 @@
 		FEDF7DF82ADC0ED700B8F223 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				FE06CBC929BDDABF003297E9 /* Cell */,
 				FEDF7DF92ADC0EFE00B8F223 /* ViewModel */,
+				FE8075232AEAB30800181CEA /* View */,
 				FE06CBC729BDDABF003297E9 /* MainController.swift */,
 			);
 			path = Main;
@@ -352,6 +349,57 @@
 				FEDF7DFA2ADC0EFE00B8F223 /* MainViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FEDF9E952AED5FBE0081BEEC /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				FEDF7DF82ADC0ED700B8F223 /* Main */,
+				FE63DE232AECF4BE00E73411 /* CityDetail */,
+				FE06CBC029BDDABF003297E9 /* Bike */,
+				FE06CBD129BDDABF003297E9 /* MainNavigationController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		FEDF9E962AED5FF20081BEEC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FE74022829814B520014629A /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FEDF9E972AED62D20081BEEC /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				FEDAD7932AA962F20057A99F /* DropDownView.swift */,
+				FE06CBCD29BDDABF003297E9 /* EmptyView.swift */,
+				FE06CBCF29BDDABF003297E9 /* CityCountView.swift */,
+				FE120C2C2A91D2B10074C1B4 /* CityTabListView.swift */,
+				FE06CBD029BDDABF003297E9 /* CitySearchTextField.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		FEDF9E982AED63450081BEEC /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CBCE29BDDABF003297E9 /* AreaCongestLvlView.swift */,
+				FE06CBCC29BDDABF003297E9 /* RoadTrafficView.swift */,
+				FEA773AB29CB43C30095B8FE /* RatioLabelView.swift */,
+				FE06CBBF29BDDABF003297E9 /* StandardTimeView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		FEDF9E992AED651A0081BEEC /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				FE06CBC429BDDABF003297E9 /* BikeAverageUtilizationRateView.swift */,
+				FE06CBC529BDDABF003297E9 /* AvailableBikeCountView.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

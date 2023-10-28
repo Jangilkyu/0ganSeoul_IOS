@@ -49,6 +49,11 @@ class MainController: UIViewController {
         dropDownView.mainController = self
         viewModel.getCitiesAPIInfo()
         setup()
+        bind()
+    }
+    
+    private func bind() {
+        
     }
     
     private func configureTFDelegate() {
@@ -67,14 +72,15 @@ class MainController: UIViewController {
     }
 
     private func setUI() {
-        view.addSubview(topLogoImageView)
-        view.addSubview(leftLogoImageView)
-        view.addSubview(citySearchTextField)
-        view.addSubview(cityTabListView)
-        view.addSubview(cityCountView)
-        view.addSubview(collectionView)
-        view.addSubview(emptyView)
-        view.addSubview(dropDownView)
+        
+        [topLogoImageView
+         ,leftLogoImageView
+         ,citySearchTextField
+         ,cityTabListView
+         ,cityCountView
+         ,collectionView
+         ,emptyView
+         ,dropDownView].forEach { view.addSubview($0) }
         
         topLogoImageView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(51)
@@ -97,32 +103,29 @@ class MainController: UIViewController {
         cityTabListView.snp.makeConstraints { make in
             make.height.equalTo(100)
             make.top.equalTo(citySearchTextField.snp.bottom).offset(20)
-            make.bottom.equalTo(cityCountView.snp.top).offset(-25)
             make.leading.equalToSuperview().offset(40)
             make.trailing.equalToSuperview().offset(-40)
         }
         
         cityCountView.snp.makeConstraints { make in
+            make.top.equalTo(cityTabListView.snp.bottom).offset(25)
             make.leading.equalToSuperview().offset(40)
-            make.top.equalTo(cityTabListView.snp.bottom).offset(40)
         }
 
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(cityCountView.snp.bottom).offset(32)
+            make.top.equalTo(dropDownView.snp.bottom).offset(32)
             make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        }
+        
+        dropDownView.snp.makeConstraints { make in
+            make.top.equalTo(cityTabListView.snp.bottom).offset(25)
+            make.trailing.equalToSuperview().offset(-40)
         }
         
         emptyView.snp.makeConstraints { make in
             make.centerX.equalTo(view.snp.centerX)
             make.centerY.equalTo(view.snp.centerY).offset(150)
-        }
-        
-        dropDownView.snp.makeConstraints { make in
-            make.height.equalTo(30)
-            make.width.equalTo(150)
-            make.top.equalTo(cityTabListView.snp.bottom).offset(25)
-            make.trailing.equalToSuperview().offset(-40)
         }
     }
       
